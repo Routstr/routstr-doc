@@ -1,0 +1,291 @@
+import React from 'react';
+import Image from 'next/image';
+import {Badge} from '@/components/ui/badge';
+import {Card} from '@/components/ui/card';
+
+import {ExternalLink, Code, Sparkles, Layers, Cpu} from 'lucide-react';
+
+export function ToolIntegrations() {
+  return (
+    <div className="max-w-5xl mx-auto px-8 py-8 select-text">
+      <h1 className="text-4xl font-bold mb-6">Tool Integrations</h1>
+      <p className="text-lg text-muted-foreground mb-8">
+        Seamlessly integrate otrta 402 gateway with your favorite AI tools and development environments.
+      </p>
+
+      <div className="space-y-12">
+        {/* Major AI Coding Apps Section */}
+        <section>
+          <h2 className="text-3xl font-bold mb-6">Major AI Coding Apps</h2>
+          <p className="text-muted-foreground mb-8">
+            The most popular AI coding assistants trust otrta 402 gateway for private, efficient payments. See how these
+            tools work in action:
+          </p>
+
+          {/* Cline */}
+          <div className="mb-12">
+            <Card className="p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Code className="h-8 w-8 text-blue-500" />
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold">Cline</h3>
+                  <p className="text-muted-foreground">Autonomous coding agent right in your IDE</p>
+                </div>
+                <div className="flex gap-2">
+                  <Badge variant="secondary">593k+ downloads</Badge>
+                  <a
+                    href="https://cline.bot/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors">
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <Image
+                  src="/cline.gif"
+                  alt="Cline AI coding assistant in action"
+                  width={800}
+                  height={450}
+                  className="rounded-lg border shadow-sm w-full h-auto"
+                  unoptimized
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold mb-3">Features</h4>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <Badge variant="outline">VS Code Extension</Badge>
+                    <Badge variant="outline">Autonomous Coding</Badge>
+                    <Badge variant="outline">MCP Marketplace</Badge>
+                    <Badge variant="outline">Tool Calling</Badge>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3">Configuration</h4>
+                  <div className="bg-muted/50 rounded-lg p-4">
+                    <p className="font-medium mb-2">Quick Setup:</p>
+                    <ul className="space-y-1 text-sm">
+                      <li>
+                        • Set API Provider to <strong>OpenAI Compatible</strong>
+                      </li>
+                      <li>
+                        • Base URL: <strong>http://localhost:3333</strong>
+                      </li>
+                      <li>• API Key: Any value (required by tool but can be anything)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Roo Code */}
+          <div className="mb-12">
+            <Card className="p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Layers className="h-8 w-8 text-purple-500" />
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold">Roo Code</h3>
+                  <p className="text-muted-foreground">A whole dev team of AI agents in your editor</p>
+                </div>
+                <div className="flex gap-2">
+                  <Badge variant="secondary">592k+ downloads</Badge>
+                  <a
+                    href="https://roocode.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors">
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <Image
+                  src="/roocode.gif"
+                  alt="Roo Code multi-agent system in action"
+                  width={800}
+                  height={450}
+                  className="rounded-lg border shadow-sm w-full h-auto"
+                  unoptimized
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold mb-3">Features</h4>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <Badge variant="outline">Multi-Agent System</Badge>
+                    <Badge variant="outline">Deep Context</Badge>
+                    <Badge variant="outline">Diff-based Edits</Badge>
+                    <Badge variant="outline">Model Agnostic</Badge>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3">Environment Setup</h4>
+                  <div className="bg-muted/50 rounded-lg p-4">
+                    <p className="font-medium mb-2">Quick Setup:</p>
+                    <ul className="space-y-1 text-sm">
+                      <li>
+                        • Set API Provider to <strong>OpenAI Compatible</strong>
+                      </li>
+                      <li>
+                        • Set environment variable OPENAI_API_BASE to <strong>http://localhost:3333</strong>
+                      </li>
+                      <li>• Set OPENAI_API_KEY to any value (required but can be anything)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Kilo Code */}
+          <div className="mb-12">
+            <Card className="p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Sparkles className="h-8 w-8 text-green-500" />
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold">Kilo Code</h3>
+                  <p className="text-muted-foreground">The best AI coding agent for VS Code</p>
+                </div>
+                <div className="flex gap-2">
+                  <Badge variant="secondary">Latest</Badge>
+                  <a
+                    href="https://kilocode.ai/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors">
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <Image
+                  src="/kilocode.gif"
+                  alt="Kilo Code orchestrator mode demonstration"
+                  width={800}
+                  height={450}
+                  className="rounded-lg border shadow-sm w-full h-auto"
+                  unoptimized
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold mb-3">Features</h4>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <Badge variant="outline">Orchestrator Mode</Badge>
+                    <Badge variant="outline">Error Recovery</Badge>
+                    <Badge variant="outline">Context7 Integration</Badge>
+                    <Badge variant="outline">Hallucination-free</Badge>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3">VS Code Settings</h4>
+                  <div className="bg-muted/50 rounded-lg p-4">
+                    <p className="font-medium mb-2">Quick Setup:</p>
+                    <ul className="space-y-1 text-sm">
+                      <li>
+                        • Set API Provider to <strong>OpenAI Compatible</strong>
+                      </li>
+                      <li>
+                        • Set API Endpoint to <strong>http://localhost:3333</strong>
+                      </li>
+                      <li>• Set API Key to any value (required but can be anything)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          {/* Goose */}
+          <div className="mb-12">
+            <Card className="p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Cpu className="h-8 w-8 text-orange-500" />
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold">Goose</h3>
+                  <p className="text-muted-foreground">Open source AI agent by Block for development automation</p>
+                </div>
+                <div className="flex gap-2">
+                  <Badge variant="secondary">Block</Badge>
+                  <a
+                    href="https://block.github.io/goose/docs/quickstart"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors">
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <Image
+                  src="/goose.gif"
+                  alt="Goose AI agent automating development tasks"
+                  width={800}
+                  height={450}
+                  className="rounded-lg border shadow-sm w-full h-auto"
+                  unoptimized
+                />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold mb-3">Features</h4>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <Badge variant="outline">Desktop & CLI</Badge>
+                    <Badge variant="outline">Browser Control</Badge>
+                    <Badge variant="outline">Extension System</Badge>
+                    <Badge variant="outline">Session Management</Badge>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-3">Configuration</h4>
+                  <div className="bg-muted/50 rounded-lg p-4">
+                    <p className="font-medium mb-2">Update your config.yaml file:</p>
+                    <ul className="space-y-1 text-sm">
+                      <li>
+                        • Location: <strong>~/.config/goose/config.yaml</strong> (macOS/Linux) or{' '}
+                        <strong>%APPDATA%\Block\goose\config\config.yaml</strong> (Windows)
+                      </li>
+                      <li>
+                        • Set <strong>GOOSE_PROVIDER: openai</strong>
+                      </li>
+                      <li>
+                        • Set <strong>GOOSE_MODEL:</strong> your preferred model (e.g., gpt-4)
+                      </li>
+                      <li>
+                        • Set <strong>OPENAI_HOST: http://localhost:3333</strong>
+                      </li>
+                      <li>
+                        • Set <strong>OPENAI_BASE_PATH: chat/completions</strong>
+                      </li>
+                    </ul>
+                    <p className="text-xs text-muted-foreground mt-3">
+                      For detailed configuration options, check the{' '}
+                      <a
+                        href="https://block.github.io/goose/docs/guides/config-file/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:text-blue-700 underline">
+                        official configuration guide
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+}

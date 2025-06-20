@@ -1,0 +1,12 @@
+services:
+  otrta-routstr-ui:
+    container_name: otrta-routstr-ui
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      - NEXTAUTH_SECRET=EHscDcEvDAKf/1Yfp7aJQx9f4DIx5Qm959bMHsBDSQs=
+      - AUTH_TRUST_HOST=true
