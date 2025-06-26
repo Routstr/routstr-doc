@@ -12,8 +12,8 @@ export const Logo = ({className, size = 'lg', ...props}: LogoProps) => {
   const sizeClasses = {
     sm: 'h-6 w-6',
     md: 'h-8 w-8',
-    lg: 'h-20 w-20',
-    xl: 'h-16 w-16',
+    lg: 'h-10 w-10',
+    xl: 'h-10 w-10',
   };
 
   const imageSizes = {
@@ -24,13 +24,13 @@ export const Logo = ({className, size = 'lg', ...props}: LogoProps) => {
   };
 
   return (
-    <div className={clsx('flex items-center justify-center', sizeClasses[size], className)} {...props}>
+    <div className={clsx('flex m-2 items-center justify-center', sizeClasses[size], className)} {...props}>
       <Image
         src="/otrta.svg"
         alt="logo"
         width={imageSizes[size].width}
         height={imageSizes[size].height}
-        className="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal"
+        className="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal rounded"
         priority
       />
     </div>
