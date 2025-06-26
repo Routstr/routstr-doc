@@ -249,10 +249,7 @@ export function ProviderProtocols() {
       {/* Cost Management System */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            Dynamic Cost Management
-            <Badge variant="outline">RECOMMENDED</Badge>
-          </CardTitle>
+          <CardTitle className="flex items-center gap-2">Dynamic Cost Management</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <p className="text-muted-foreground">
