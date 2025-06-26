@@ -1,8 +1,6 @@
 import React from 'react';
 import {Card, CardContent, CardHeader, CardTitle} from '../../ui/card';
-import {Network, Users, Key, Shield, Zap, ArrowUpRight, Star, Wallet} from 'lucide-react';
-import {motion} from 'framer-motion';
-import {GithubLogo} from '@/components/ui/Icons';
+import {Network, Users, Shield, Star, Wallet} from 'lucide-react';
 
 export function NostrProtocols() {
   return (

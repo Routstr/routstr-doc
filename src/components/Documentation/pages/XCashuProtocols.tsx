@@ -64,76 +64,78 @@ export function XCashuProtocols() {
 
           <div>
             <h4 className="font-semibold mb-2">Flow (Sequence Diagram):</h4>
-            <div className="bg-muted p-4 rounded-lg">
-              <SequenceDiagram
-                participants={['ClientWallet', 'Client', 'Provider', 'ProviderWallet']}
-                steps={[
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'Client',
-                      to: 'ClientWallet',
-                      message: 'Prepare exact (or over) value note',
-                      type: 'arrow',
+            <div className="bg-muted p-4 rounded-lg overflow-x-auto">
+              <div className="min-w-[600px]">
+                <SequenceDiagram
+                  participants={['ClientWallet', 'Client', 'Provider', 'ProviderWallet']}
+                  steps={[
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'Client',
+                        to: 'ClientWallet',
+                        message: 'Prepare exact (or over) value note',
+                        type: 'arrow',
+                      },
                     },
-                  },
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'ClientWallet',
-                      to: 'Client',
-                      message: 'Returns note',
-                      type: 'return',
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'ClientWallet',
+                        to: 'Client',
+                        message: 'Returns note',
+                        type: 'return',
+                      },
                     },
-                  },
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'Client',
-                      to: 'Provider',
-                      message: 'API Request + X-Cashu header',
-                      type: 'arrow',
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'Client',
+                        to: 'Provider',
+                        message: 'API Request + X-Cashu header',
+                        type: 'arrow',
+                      },
                     },
-                  },
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'Provider',
-                      to: 'ProviderWallet',
-                      message: 'Redeem note & compute usage/fee',
-                      type: 'arrow',
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'Provider',
+                        to: 'ProviderWallet',
+                        message: 'Redeem note & compute usage/fee',
+                        type: 'arrow',
+                      },
                     },
-                  },
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'ProviderWallet',
-                      to: 'Provider',
-                      message: 'Usage result, optionally issue change note',
-                      type: 'return',
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'ProviderWallet',
+                        to: 'Provider',
+                        message: 'Usage result, optionally issue change note',
+                        type: 'return',
+                      },
                     },
-                  },
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'Provider',
-                      to: 'Client',
-                      message: 'API response (+ X-Cashu header if change)',
-                      type: 'return',
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'Provider',
+                        to: 'Client',
+                        message: 'API response (+ X-Cashu header if change)',
+                        type: 'return',
+                      },
                     },
-                  },
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'Client',
-                      to: 'ClientWallet',
-                      message: 'Store change note for next use',
-                      type: 'arrow',
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'Client',
+                        to: 'ClientWallet',
+                        message: 'Store change note for next use',
+                        type: 'arrow',
+                      },
                     },
-                  },
-                ]}
-                className="w-full"
-              />
+                  ]}
+                  className="w-full"
+                />
+              </div>
             </div>
           </div>
 
@@ -182,121 +184,123 @@ export function XCashuProtocols() {
 
           <div>
             <h4 className="font-semibold mb-2">Flow:</h4>
-            <div className="bg-muted p-4 rounded-lg">
-              <SequenceDiagram
-                participants={['ClientDB/External', 'Client', 'Provider', 'ProviderDB']}
-                steps={[
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'Client',
-                      to: 'ClientDB/External',
-                      message: 'Get persistent token',
-                      type: 'arrow',
+            <div className="bg-muted p-4 rounded-lg overflow-x-auto">
+              <div className="min-w-[800px]">
+                <SequenceDiagram
+                  participants={['ClientDB/External', 'Client', 'Provider', 'ProviderDB']}
+                  steps={[
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'Client',
+                        to: 'ClientDB/External',
+                        message: 'Get persistent token',
+                        type: 'arrow',
+                      },
                     },
-                  },
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'ClientDB/External',
-                      to: 'Client',
-                      message: 'Return stored token',
-                      type: 'return',
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'ClientDB/External',
+                        to: 'Client',
+                        message: 'Return stored token',
+                        type: 'return',
+                      },
                     },
-                  },
-                  {
-                    type: 'loop',
-                    condition: 'Token has balance',
-                    steps: [
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Client',
-                          to: 'Provider',
-                          message: 'API Request + X-Cashu header',
-                          type: 'arrow',
+                    {
+                      type: 'loop',
+                      condition: 'Token has balance',
+                      steps: [
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Client',
+                            to: 'Provider',
+                            message: 'API Request + X-Cashu header',
+                            type: 'arrow',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Provider',
-                          to: 'ProviderDB',
-                          message: 'Deduct usage from token balance',
-                          type: 'arrow',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Provider',
+                            to: 'ProviderDB',
+                            message: 'Deduct usage from token balance',
+                            type: 'arrow',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'ProviderDB',
-                          to: 'Provider',
-                          message: 'Balance updated',
-                          type: 'return',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'ProviderDB',
+                            to: 'Provider',
+                            message: 'Balance updated',
+                            type: 'return',
+                          },
                         },
-                      },
-                    ],
-                  },
-                  {
-                    type: 'alt',
-                    condition: 'Sufficient balance',
-                    steps: [
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Provider',
-                          to: 'Client',
-                          message: 'API Response (+ balance optional)',
-                          type: 'return',
+                      ],
+                    },
+                    {
+                      type: 'alt',
+                      condition: 'Sufficient balance',
+                      steps: [
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Provider',
+                            to: 'Client',
+                            message: 'API Response (+ balance optional)',
+                            type: 'return',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Client',
-                          to: 'ClientDB/External',
-                          message: 'Update token balance',
-                          type: 'arrow',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Client',
+                            to: 'ClientDB/External',
+                            message: 'Update token balance',
+                            type: 'arrow',
+                          },
                         },
-                      },
-                    ],
-                  },
-                  {
-                    type: 'alt',
-                    condition: 'Insufficient balance',
-                    steps: [
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Provider',
-                          to: 'Client',
-                          message: 'HTTP 402 Payment Required',
-                          type: 'return',
+                      ],
+                    },
+                    {
+                      type: 'alt',
+                      condition: 'Insufficient balance',
+                      steps: [
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Provider',
+                            to: 'Client',
+                            message: 'HTTP 402 Payment Required',
+                            type: 'return',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Client',
-                          to: 'ClientDB/External',
-                          message: 'Request new token',
-                          type: 'arrow',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Client',
+                            to: 'ClientDB/External',
+                            message: 'Request new token',
+                            type: 'arrow',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'ClientDB/External',
-                          to: 'Client',
-                          message: 'Provide fresh token',
-                          type: 'return',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'ClientDB/External',
+                            to: 'Client',
+                            message: 'Provide fresh token',
+                            type: 'return',
+                          },
                         },
-                      },
-                    ],
-                  },
-                ]}
-                className="w-full min-h-[600px]"
-              />
+                      ],
+                    },
+                  ]}
+                  className="w-full min-h-[600px]"
+                />
+              </div>
             </div>
           </div>
 
@@ -335,184 +339,186 @@ export function XCashuProtocols() {
 
           <div>
             <h4 className="font-semibold mb-2">Flow:</h4>
-            <div className="bg-muted p-4 rounded-lg">
-              <SequenceDiagram
-                participants={['Wallet', 'Client', 'Provider', 'ProviderDB']}
-                steps={[
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'Client',
-                      to: 'Wallet',
-                      message: 'Get ecash for API key purchase',
-                      type: 'arrow',
+            <div className="bg-muted p-4 rounded-lg overflow-x-auto">
+              <div className="min-w-[800px]">
+                <SequenceDiagram
+                  participants={['Wallet', 'Client', 'Provider', 'ProviderDB']}
+                  steps={[
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'Client',
+                        to: 'Wallet',
+                        message: 'Get ecash for API key purchase',
+                        type: 'arrow',
+                      },
                     },
-                  },
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'Wallet',
-                      to: 'Client',
-                      message: 'Provide ecash payment',
-                      type: 'return',
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'Wallet',
+                        to: 'Client',
+                        message: 'Provide ecash payment',
+                        type: 'return',
+                      },
                     },
-                  },
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'Client',
-                      to: 'Provider',
-                      message: 'Request API key + ecash payment',
-                      type: 'arrow',
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'Client',
+                        to: 'Provider',
+                        message: 'Request API key + ecash payment',
+                        type: 'arrow',
+                      },
                     },
-                  },
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'Provider',
-                      to: 'ProviderDB',
-                      message: 'Create account with credits',
-                      type: 'arrow',
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'Provider',
+                        to: 'ProviderDB',
+                        message: 'Create account with credits',
+                        type: 'arrow',
+                      },
                     },
-                  },
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'ProviderDB',
-                      to: 'Provider',
-                      message: 'Account created',
-                      type: 'return',
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'ProviderDB',
+                        to: 'Provider',
+                        message: 'Account created',
+                        type: 'return',
+                      },
                     },
-                  },
-                  {
-                    type: 'message',
-                    content: {
-                      from: 'Provider',
-                      to: 'Client',
-                      message: 'Return API key',
-                      type: 'return',
+                    {
+                      type: 'message',
+                      content: {
+                        from: 'Provider',
+                        to: 'Client',
+                        message: 'Return API key',
+                        type: 'return',
+                      },
                     },
-                  },
-                  {
-                    type: 'loop',
-                    condition: 'Using API key',
-                    steps: [
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Client',
-                          to: 'Provider',
-                          message: 'API Request + API key',
-                          type: 'arrow',
+                    {
+                      type: 'loop',
+                      condition: 'Using API key',
+                      steps: [
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Client',
+                            to: 'Provider',
+                            message: 'API Request + API key',
+                            type: 'arrow',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Provider',
-                          to: 'ProviderDB',
-                          message: 'Check/deduct credits',
-                          type: 'arrow',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Provider',
+                            to: 'ProviderDB',
+                            message: 'Check/deduct credits',
+                            type: 'arrow',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'ProviderDB',
-                          to: 'Provider',
-                          message: 'Credit status',
-                          type: 'return',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'ProviderDB',
+                            to: 'Provider',
+                            message: 'Credit status',
+                            type: 'return',
+                          },
                         },
-                      },
-                    ],
-                  },
-                  {
-                    type: 'alt',
-                    condition: 'Credits available',
-                    steps: [
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Provider',
-                          to: 'Client',
-                          message: 'API Response',
-                          type: 'return',
+                      ],
+                    },
+                    {
+                      type: 'alt',
+                      condition: 'Credits available',
+                      steps: [
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Provider',
+                            to: 'Client',
+                            message: 'API Response',
+                            type: 'return',
+                          },
                         },
-                      },
-                    ],
-                  },
-                  {
-                    type: 'alt',
-                    condition: 'Credits exhausted',
-                    steps: [
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Provider',
-                          to: 'Client',
-                          message: 'HTTP 402 Payment Required',
-                          type: 'return',
+                      ],
+                    },
+                    {
+                      type: 'alt',
+                      condition: 'Credits exhausted',
+                      steps: [
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Provider',
+                            to: 'Client',
+                            message: 'HTTP 402 Payment Required',
+                            type: 'return',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Client',
-                          to: 'Wallet',
-                          message: 'Get ecash for top-up',
-                          type: 'arrow',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Client',
+                            to: 'Wallet',
+                            message: 'Get ecash for top-up',
+                            type: 'arrow',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Wallet',
-                          to: 'Client',
-                          message: 'Provide ecash payment',
-                          type: 'return',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Wallet',
+                            to: 'Client',
+                            message: 'Provide ecash payment',
+                            type: 'return',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Client',
-                          to: 'Provider',
-                          message: 'Top-up account + ecash payment',
-                          type: 'arrow',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Client',
+                            to: 'Provider',
+                            message: 'Top-up account + ecash payment',
+                            type: 'arrow',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Provider',
-                          to: 'ProviderDB',
-                          message: 'Add credits to existing account',
-                          type: 'arrow',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Provider',
+                            to: 'ProviderDB',
+                            message: 'Add credits to existing account',
+                            type: 'arrow',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'ProviderDB',
-                          to: 'Provider',
-                          message: 'Credits added',
-                          type: 'return',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'ProviderDB',
+                            to: 'Provider',
+                            message: 'Credits added',
+                            type: 'return',
+                          },
                         },
-                      },
-                      {
-                        type: 'message',
-                        content: {
-                          from: 'Provider',
-                          to: 'Client',
-                          message: 'Top-up successful',
-                          type: 'return',
+                        {
+                          type: 'message',
+                          content: {
+                            from: 'Provider',
+                            to: 'Client',
+                            message: 'Top-up successful',
+                            type: 'return',
+                          },
                         },
-                      },
-                    ],
-                  },
-                ]}
-                className="w-full min-h-[800px]"
-              />
+                      ],
+                    },
+                  ]}
+                  className="w-full min-h-[800px]"
+                />
+              </div>
             </div>
           </div>
 
