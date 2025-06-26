@@ -103,11 +103,7 @@ export default function MajorApps() {
             <motion.div
               initial={{opacity: 0, y: 20}}
               animate={{opacity: 1, y: 0}}
-              transition={{duration: 0.6, delay: 0.3}}>
-              <Badge className="mb-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white">
-                Trusted by Industry Leaders
-              </Badge>
-            </motion.div>
+              transition={{duration: 0.6, delay: 0.3}}></motion.div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Major AI Coding Apps
               <span className="block text-primary">Easily Adapt to otrta + eCash</span>
