@@ -2,10 +2,17 @@
 
 import React, {useState} from 'react';
 import Link from 'next/link';
-import {ChevronDown, ChevronRight, BookOpen, Download, Settings, Puzzle, Zap, Play} from 'lucide-react';
+import {ChevronDown, ChevronRight, BookOpen, Download, Settings, Puzzle, Zap, Play, CreditCard} from 'lucide-react';
 import {cn} from '@/lib/utils';
 
-export type PageType = 'getting-started' | 'installation' | 'how-to-use' | 'tool-integrations' | 'advanced-setup';
+export type PageType =
+  | 'getting-started'
+  | 'installation'
+  | 'how-to-use'
+  | 'tool-integrations'
+  | 'advanced-setup'
+  | 'x-cashu-protocols'
+  | 'provider-protocols';
 
 interface NavItem {
   title: string;
@@ -53,6 +60,22 @@ const navigationItems: NavItem[] = [
       {
         title: 'Advanced Setup',
         page: 'advanced-setup',
+        icon: Settings,
+      },
+    ],
+  },
+  {
+    title: 'Protocols',
+    icon: CreditCard,
+    children: [
+      {
+        title: 'X-Cashu Protocols',
+        page: 'x-cashu-protocols',
+        icon: CreditCard,
+      },
+      {
+        title: 'Provider Protocols',
+        page: 'provider-protocols',
         icon: Settings,
       },
     ],

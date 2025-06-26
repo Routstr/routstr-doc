@@ -9,10 +9,19 @@ import {Installation} from '@/components/Documentation/pages/Installation';
 import {HowToUse} from '@/components/Documentation/pages/HowToUse';
 import {ToolIntegrations} from '@/components/Documentation/pages/ToolIntegrations';
 import {AdvancedSetup} from '@/components/Documentation/pages/AdvancedSetup';
+import {XCashuProtocols} from '@/components/Documentation/pages/XCashuProtocols';
+import {ProviderProtocols} from '@/components/Documentation/pages/ProviderProtocols';
 import {Navbar} from '@/components/NavBar/Navbar';
 import {BackgroundPattern} from '@/components/Shared/BackgroundPattern';
 
-type PageType = 'getting-started' | 'installation' | 'how-to-use' | 'tool-integrations' | 'advanced-setup';
+type PageType =
+  | 'getting-started'
+  | 'installation'
+  | 'how-to-use'
+  | 'tool-integrations'
+  | 'advanced-setup'
+  | 'x-cashu-protocols'
+  | 'provider-protocols';
 
 const validSections: PageType[] = [
   'getting-started',
@@ -20,6 +29,8 @@ const validSections: PageType[] = [
   'how-to-use',
   'tool-integrations',
   'advanced-setup',
+  'x-cashu-protocols',
+  'provider-protocols',
 ];
 
 interface DocumentationSectionPageProps {
@@ -49,6 +60,10 @@ export default function DocumentationSectionPage({params}: DocumentationSectionP
         return <ToolIntegrations />;
       case 'advanced-setup':
         return <AdvancedSetup />;
+      case 'x-cashu-protocols':
+        return <XCashuProtocols />;
+      case 'provider-protocols':
+        return <ProviderProtocols />;
       default:
         return <GettingStarted />;
     }
