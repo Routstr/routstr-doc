@@ -75,7 +75,6 @@ dist
 
 # Gatsby files
 .cache/
-public
 
 # Storybook build outputs
 .out
@@ -120,12 +119,6 @@ coverage/
 .jest/
 jest.config.js
 .coverage/
-
-# Linting
-.eslintrc*
-.prettierrc*
-prettier.config.*
-.stylelintrc*
 
 # Package manager files
 yarn.lock
