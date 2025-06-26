@@ -8,7 +8,7 @@ export function ProviderProtocols() {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">Provider Protocols</h1>
+        <h1 className="text-4xl font-bold tracking-tight">Provider Protocol</h1>
         <p className="text-xl text-muted-foreground">
           Implementation guidelines, API extensions, and operational best practices for X-Cashu payment providers.
         </p>
@@ -31,72 +31,158 @@ export function ProviderProtocols() {
         </CardContent>
       </Card>
 
-      {/* Required Endpoints */}
+      {/* Implementation Notes */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Implementation Notes</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ul className="list-disc list-inside text-muted-foreground space-y-2">
+            <li>
+              <code className="bg-muted px-2 py-1 rounded">X-Cashu</code> header is used in all protocols for both
+              requests (payment) and responses (returning change).
+            </li>
+            <li>
+              Providers are required to implement the{' '}
+              <code className="bg-muted px-2 py-1 rounded">/provider/models</code> endpoint for pricing and model
+              discovery.
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
+      {/* Model & Pricing Discovery */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            Required API Endpoints
-            <Badge variant="destructive">MANDATORY</Badge>
+            Model & Pricing Discovery
+            <Badge variant="destructive">REQUIRED</Badge>
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-6">
+        <CardContent className="space-y-4">
+          <p className="text-muted-foreground">
+            To enable wallet-aware clients to estimate and optimize payment, every provider MUST implement a discovery
+            endpoint:
+          </p>
+
+          <div className="space-y-2">
+            <p>
+              <strong>Endpoint:</strong> <code className="bg-muted px-2 py-1 rounded">GET /provider/models</code>
+            </p>
+            <p>
+              <strong>Description:</strong> Returns a list of supported models with detailed pricing information,
+              minimum payment requirements, and model specifications.
+            </p>
+          </div>
+
           <div>
-            <h4 className="font-semibold mb-3">1. Model Discovery Endpoint</h4>
-            <div className="bg-muted p-4 rounded-lg space-y-3">
-              <div className="flex items-center gap-2">
-                <Badge variant="outline">GET</Badge>
-                <code className="text-sm">/models</code>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Returns a list of supported models and their pricing in millisatoshis.
-              </p>
-              <div className="bg-background p-3 rounded border">
-                <p className="text-xs font-medium mb-2">Example Response:</p>
-                <pre className="text-xs overflow-x-auto">
-                  {`{
-  "models": [
-    {
-      "id": "gpt-4o",
-      "description": "OpenAI GPT-4o",
-      "pricing": {
-        "per_1k_tokens": 3500
-      }
-    },
-    {
-      "id": "gpt-3.5-turbo", 
-      "description": "OpenAI GPT-3.5 Turbo",
-      "pricing": {
-        "per_1k_tokens": 1000
-      }
-    }
-  ]
-}`}
-                </pre>
-              </div>
+            <h4 className="font-semibold mb-2">Example Response:</h4>
+            <div className="bg-muted p-4 rounded-lg overflow-x-auto">
+              <pre className="text-sm">
+                {`{
+   "models": [
+     {
+       "name": "gpt-4o",
+       "input_cost": "15.00",
+       "output_cost": "60.00",
+       "min_cost_per_request": "500",
+       "model_type": "chat",
+       "description": "OpenAI GPT-4o - Latest multimodal model",
+       "context_length": 128000,
+       "is_free": false
+     },
+     {
+       "name": "gpt-3.5-turbo",
+       "input_cost": "1.50",
+       "output_cost": "2.00",
+       "min_cost_per_request": "100",
+       "model_type": "chat",
+       "description": "OpenAI GPT-3.5 Turbo",
+       "context_length": 16385,
+       "is_free": false
+     },
+     {
+       "name": "text-embedding-3-small",
+       "input_cost": "0.00",
+       "output_cost": "0.00",
+       "model_type": "embedding",
+       "description": "Small embedding model",
+       "context_length": 8192,
+       "is_free": true
+     }
+   ]
+ }`}
+              </pre>
             </div>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-3">2. Payment Processing Endpoints</h4>
-            <div className="space-y-3">
-              <div className="bg-muted p-4 rounded-lg">
-                <div className="flex items-center gap-2 mb-2">
-                  <Badge variant="outline">POST</Badge>
-                  <code className="text-sm">/v1/chat/completions</code>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  OpenAI-compatible endpoint that processes X-Cashu headers for payment.
-                </p>
+            <h4 className="font-semibold mb-2">Field Descriptions:</h4>
+            <div className="space-y-2 text-sm">
+              <div className="grid grid-cols-3 gap-4 p-2 bg-muted/50 rounded">
+                <span className="font-medium">Field</span>
+                <span className="font-medium">Type</span>
+                <span className="font-medium">Description</span>
               </div>
-
-              <div className="bg-muted p-4 rounded-lg">
-                <div className="flex items-center gap-2 mb-2">
-                  <Badge variant="outline">POST</Badge>
-                  <code className="text-sm">/v1/embeddings</code>
-                </div>
-                <p className="text-sm text-muted-foreground">Embedding endpoint with X-Cashu payment support.</p>
+              <div className="grid grid-cols-3 gap-4 p-2">
+                <code>name</code>
+                <span>string</span>
+                <span>Model identifier</span>
+              </div>
+              <div className="grid grid-cols-3 gap-4 p-2 bg-muted/30">
+                <code>input_cost</code>
+                <span>decimal</span>
+                <span>Cost per 1K input tokens (millisats)</span>
+              </div>
+              <div className="grid grid-cols-3 gap-4 p-2">
+                <code>output_cost</code>
+                <span>decimal</span>
+                <span>Cost per 1K output tokens (millisats)</span>
+              </div>
+              <div className="grid grid-cols-3 gap-4 p-2">
+                <code>min_cost_per_request</code>
+                <span>decimal?</span>
+                <span>Optional minimum charge per request</span>
+              </div>
+              <div className="grid grid-cols-3 gap-4 p-2 bg-muted/30">
+                <code>model_type</code>
+                <span>string?</span>
+                <span>Type: "chat", "embedding", etc.</span>
+              </div>
+              <div className="grid grid-cols-3 gap-4 p-2">
+                <code>description</code>
+                <span>string?</span>
+                <span>Human-readable model description</span>
+              </div>
+              <div className="grid grid-cols-3 gap-4 p-2 bg-muted/30">
+                <code>context_length</code>
+                <span>integer?</span>
+                <span>Maximum context window size</span>
+              </div>
+              <div className="grid grid-cols-3 gap-4 p-2">
+                <code>is_free</code>
+                <span>boolean?</span>
+                <span>Whether the model is free to use</span>
               </div>
             </div>
+          </div>
+
+          <Alert>
+            <AlertDescription>
+              <ul className="list-disc list-inside space-y-1">
+                <li>Clients MUST fetch this endpoint frequently to select models/calculate notes.</li>
+                <li>If unsupported, clients should warn the user and fail gracefully.</li>
+              </ul>
+            </AlertDescription>
+          </Alert>
+
+          <div>
+            <h4 className="font-semibold mb-2">Benefits:</h4>
+            <ul className="list-disc list-inside text-muted-foreground space-y-1">
+              <li>Clients can create notes with the exact amount</li>
+              <li>Smooth automation for payments; change minimization</li>
+              <li>Supports dynamic pricing and model availability changes</li>
+            </ul>
           </div>
         </CardContent>
       </Card>
@@ -140,125 +226,6 @@ export function ProviderProtocols() {
         </CardContent>
       </Card>
 
-      {/* Security Considerations */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Security Considerations</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-semibold mb-2">Note Verification:</h4>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm">
-              <li>Validate Cashu note signatures against trusted mints</li>
-              <li>Check note freshness and prevent replay attacks</li>
-              <li>Verify note amounts match or exceed request costs</li>
-              <li>Ensure proper note redemption and burning</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-2">Rate Limiting:</h4>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm">
-              <li>Implement per-note rate limiting to prevent abuse</li>
-              <li>Consider request frequency limits per payment token</li>
-              <li>Monitor for unusual payment patterns</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-2">Error Handling:</h4>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm">
-              <li>Return HTTP 402 for insufficient payment</li>
-              <li>Provide clear error messages for payment issues</li>
-              <li>Handle mint communication failures gracefully</li>
-              <li>Log payment events for monitoring and debugging</li>
-            </ul>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Operational Best Practices */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Operational Best Practices</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-semibold mb-2">Mint Management:</h4>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm">
-              <li>Maintain connections to multiple trusted mints for redundancy</li>
-              <li>Monitor mint health and availability</li>
-              <li>Implement failover mechanisms for mint outages</li>
-              <li>Keep mint public keys updated and secure</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-2">Performance Optimization:</h4>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm">
-              <li>Cache pricing information to reduce API overhead</li>
-              <li>Batch note verification when possible</li>
-              <li>Optimize change note generation</li>
-              <li>Monitor payment processing latency</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-2">Monitoring and Logging:</h4>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm">
-              <li>Track payment success/failure rates</li>
-              <li>Monitor total transaction volumes</li>
-              <li>Log security events and suspicious activity</li>
-              <li>Generate usage reports for business analytics</li>
-            </ul>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Implementation Example */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Implementation Example</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="bg-muted p-4 rounded-lg">
-            <p className="text-sm font-medium mb-3">Basic Payment Processing Flow:</p>
-            <pre className="text-xs overflow-x-auto">
-              {`// Pseudo-code for processing X-Cashu payments
-async function processPayment(request) {
-  // 1. Extract Cashu note from X-Cashu header
-  const cashuNote = request.headers['x-cashu'];
-  
-  // 2. Verify note with mint
-  const verification = await verifyNote(cashuNote);
-  if (!verification.valid) {
-    return response(402, { error: 'Invalid payment' });
-  }
-  
-  // 3. Calculate request cost
-  const cost = calculateCost(request.model, request.tokens);
-  if (verification.amount < cost) {
-    return response(402, { error: 'Insufficient payment' });
-  }
-  
-  // 4. Process AI request
-  const aiResponse = await processAIRequest(request);
-  
-  // 5. Generate change if needed
-  const change = verification.amount - cost;
-  const changeNote = change > 0 ? await generateChange(change) : null;
-  
-  // 6. Return response with change
-  return response(200, aiResponse, {
-    'x-cashu': changeNote
-  });
-}`}
-            </pre>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Integration Guidelines */}
       <Card>
         <CardHeader>
           <CardTitle>Integration Guidelines</CardTitle>
@@ -274,16 +241,6 @@ async function processPayment(request) {
               <li>Integrate payment verification into request pipeline</li>
               <li>Modify response handling to include change notes</li>
               <li>Update documentation to reflect new payment options</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-2">Testing and Validation:</h4>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm">
-              <li>Test with various note denominations and amounts</li>
-              <li>Validate change calculation accuracy</li>
-              <li>Verify error handling for edge cases</li>
-              <li>Load test payment processing under high volume</li>
             </ul>
           </div>
         </CardContent>

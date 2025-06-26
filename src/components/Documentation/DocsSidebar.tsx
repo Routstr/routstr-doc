@@ -65,16 +65,16 @@ const navigationItems: NavItem[] = [
     ],
   },
   {
-    title: 'Protocols',
+    title: 'Protocol',
     icon: CreditCard,
     children: [
       {
-        title: 'X-Cashu Protocols',
+        title: 'X-Cashu',
         page: 'x-cashu-protocols',
         icon: CreditCard,
       },
       {
-        title: 'Provider Protocols',
+        title: 'Provider',
         page: 'provider-protocols',
         icon: Settings,
       },

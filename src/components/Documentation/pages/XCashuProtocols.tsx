@@ -10,7 +10,7 @@ export function XCashuProtocols() {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">X-Cashu Payment Protocols</h1>
+        <h1 className="text-4xl font-bold tracking-tight">X-Cashu Payment Protocol</h1>
         <p className="text-xl text-muted-foreground">
           Multiple interaction models for using the X-Cashu header to pay for access to LLM or other AI services over
           HTTP.
@@ -533,76 +533,6 @@ export function XCashuProtocols() {
         </CardContent>
       </Card>
 
-      {/* Model & Pricing Discovery */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            4. Model & Pricing Discovery
-            <Badge variant="destructive">REQUIRED</Badge>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-muted-foreground">
-            To enable wallet-aware clients to estimate and optimize payment, every provider MUST implement a discovery
-            endpoint:
-          </p>
-
-          <div className="space-y-2">
-            <p>
-              <strong>Endpoint:</strong> <code className="bg-muted px-2 py-1 rounded">GET /models</code>
-            </p>
-            <p>
-              <strong>Description:</strong> Returns a list of supported models and their per-request (or
-              per-token/word/etc.) pricing, in millisatoshis.
-            </p>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-2">Example Response:</h4>
-            <div className="bg-muted p-4 rounded-lg overflow-x-auto">
-              <pre className="text-sm">
-                {`{
-  "models": [
-    {
-      "id": "gpt-4o",
-      "description": "OpenAI GPT-4o",
-      "pricing": {
-        "per_1k_tokens": 3500
-      }
-    },
-    {
-      "id": "gpt-3.5-turbo",
-      "description": "OpenAI GPT-3.5 Turbo",
-      "pricing": {
-        "per_1k_tokens": 1000
-      }
-    }
-  ]
-}`}
-              </pre>
-            </div>
-          </div>
-
-          <Alert>
-            <AlertDescription>
-              <ul className="list-disc list-inside space-y-1">
-                <li>Clients MUST fetch this endpoint frequently or on startup to select models/calculate notes.</li>
-                <li>If unsupported, clients should warn the user and fail gracefully.</li>
-              </ul>
-            </AlertDescription>
-          </Alert>
-
-          <div>
-            <h4 className="font-semibold mb-2">Benefits:</h4>
-            <ul className="list-disc list-inside text-muted-foreground space-y-1">
-              <li>Clients can create notes with the exact amount</li>
-              <li>Smooth automation for payments; change minimization</li>
-              <li>Supports dynamic pricing and model availability changes</li>
-            </ul>
-          </div>
-        </CardContent>
-      </Card>
-
       {/* Protocol Comparison Table */}
       <Card>
         <CardHeader>
@@ -661,26 +591,6 @@ export function XCashuProtocols() {
               </TableBody>
             </Table>
           </div>
-        </CardContent>
-      </Card>
-
-      {/* Implementation Notes */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Implementation Notes</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="list-disc list-inside text-muted-foreground space-y-2">
-            <li>
-              <code className="bg-muted px-2 py-1 rounded">X-Cashu</code> header is used in all protocols for both
-              requests (payment) and responses (returning change).
-            </li>
-            <li>Each protocol supports OpenAI-compatible interfaces.</li>
-            <li>
-              Providers are required to implement the <code className="bg-muted px-2 py-1 rounded">/models</code>{' '}
-              endpoint for pricing and model discovery.
-            </li>
-          </ul>
         </CardContent>
       </Card>
     </div>
