@@ -13,6 +13,7 @@ import {XCashuProtocols} from '@/components/Documentation/pages/XCashuProtocols'
 import {ProviderProtocols} from '@/components/Documentation/pages/ProviderProtocols';
 import {Navbar} from '@/components/NavBar/Navbar';
 import {BackgroundPattern} from '@/components/Shared/BackgroundPattern';
+import {VisionSpec} from '@/components/Documentation/pages/Vision';
 
 type PageType =
   | 'getting-started'
@@ -21,7 +22,8 @@ type PageType =
   | 'tool-integrations'
   | 'advanced-setup'
   | 'x-cashu-protocols'
-  | 'provider-protocols';
+  | 'provider-protocols'
+  | 'vision';
 
 const validSections: PageType[] = [
   'getting-started',
@@ -31,6 +33,7 @@ const validSections: PageType[] = [
   'advanced-setup',
   'x-cashu-protocols',
   'provider-protocols',
+  'vision',
 ];
 
 interface DocumentationSectionPageProps {
@@ -64,6 +67,8 @@ export default function DocumentationSectionPage({params}: DocumentationSectionP
         return <XCashuProtocols />;
       case 'provider-protocols':
         return <ProviderProtocols />;
+      case 'vision':
+        return <VisionSpec />;
       default:
         return <GettingStarted />;
     }

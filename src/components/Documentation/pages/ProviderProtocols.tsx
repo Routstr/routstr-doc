@@ -245,6 +245,91 @@ export function ProviderProtocols() {
           </div>
         </CardContent>
       </Card>
+
+      {/* Cost Management System */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            Dynamic Cost Management
+            <Badge variant="outline">RECOMMENDED</Badge>
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <p className="text-muted-foreground">
+            The X-Cashu protocol supports dynamic, server-based pricing that enables intelligent cost management based
+            on multiple factors. This approach optimizes resource utilization while maintaining transparency for
+            clients.
+          </p>
+
+          <div>
+            <h4 className="font-semibold mb-2">Pricing Factors:</h4>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <h5 className="text-sm font-medium">Demand-Based</h5>
+                <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                  <li>Peak usage hours</li>
+                  <li>Request volume</li>
+                  <li>User concurrency</li>
+                </ul>
+              </div>
+              <div className="space-y-2">
+                <h5 className="text-sm font-medium">Resource-Based</h5>
+                <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                  <li>Server load levels</li>
+                  <li>GPU availability</li>
+                  <li>Network capacity</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-2">Real-Time Optimization:</h4>
+            <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+              <li>Historical data analysis for pricing windows</li>
+              <li>Dynamic adjustments based on current load</li>
+              <li>Market condition responsiveness</li>
+              <li>Quality-based pricing tiers</li>
+            </ul>
+          </div>
+
+          <Alert>
+            <AlertDescription>
+              <strong>Implementation Note:</strong> Providers should implement a pricing engine that can:
+              <ul className="list-disc list-inside space-y-1 mt-2">
+                <li>Process historical usage patterns</li>
+                <li>Monitor real-time resource utilization</li>
+                <li>Adjust prices based on defined thresholds</li>
+                <li>
+                  Provide pricing updates via the <code className="bg-muted px-1">/provider/models</code> endpoint
+                </li>
+              </ul>
+            </AlertDescription>
+          </Alert>
+
+          <div>
+            <h4 className="font-semibold mb-2">Benefits:</h4>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                <h5 className="text-sm font-medium">For Providers</h5>
+                <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                  <li>Optimized revenue</li>
+                  <li>Resource efficiency</li>
+                  <li>Market adaptability</li>
+                </ul>
+              </div>
+              <div className="space-y-2">
+                <h5 className="text-sm font-medium">For Clients</h5>
+                <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                  <li>Price transparency</li>
+                  <li>Cost predictability</li>
+                  <li>Value optimization</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

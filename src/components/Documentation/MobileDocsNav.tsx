@@ -14,7 +14,8 @@ type PageType =
   | 'tool-integrations'
   | 'advanced-setup'
   | 'x-cashu-protocols'
-  | 'provider-protocols';
+  | 'provider-protocols'
+  | 'vision';
 
 interface NavItem {
   title: string;
@@ -78,6 +79,11 @@ const navigationItems: NavItem[] = [
         title: 'Provider',
         page: 'provider-protocols',
         icon: Settings,
+      },
+      {
+        title: 'Vision',
+        page: 'vision',
+        icon: BookOpen,
       },
     ],
   },
