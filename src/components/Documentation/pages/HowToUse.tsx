@@ -4,16 +4,16 @@ import {CodeBlock} from '@/components/ui/code-block';
 export function HowToUse() {
   return (
     <div className="max-w-5xl mx-auto px-8 py-8 select-text">
-      <h1 className="text-4xl font-bold mb-6">How to Use otrta 402 gateway</h1>
+      <h1 className="text-4xl font-bold mb-6">How to Use</h1>
       <p className="text-lg text-muted-foreground mb-8">
-        Learn how to make your first API calls and integrate otrta 402 gateway into your applications.
+        Learn how to make your first API calls and integrate Otrta Routstr 402 gateway into your applications.
       </p>
 
       <div className="space-y-12">
         <section>
           <h2 className="text-2xl font-bold mb-4">Basic Usage</h2>
           <p className="text-muted-foreground mb-4">
-            Getting started with otrta 402 gateway is simple. Replace your OpenAI endpoint and add your e-cash header.
+            Getting started with otrta gateway is simple. Replace your OpenAI endpoint and add your e-cash header.
           </p>
           <CodeBlock
             code={`curl -X POST http://localhost:3333/v1/chat/completions \\

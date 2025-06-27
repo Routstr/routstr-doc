@@ -17,7 +17,8 @@ type PageType =
   | 'provider-protocols'
   | 'vision'
   | 'nostr'
-  | 'otrta-client';
+  | 'otrta-client'
+  | 'routstr';
 
 interface NavItem {
   title: string;
@@ -62,6 +63,11 @@ const navigationItems: NavItem[] = [
         icon: Settings,
       },
       {
+        title: 'Routstr',
+        page: 'routstr',
+        icon: Zap,
+      },
+      {
         title: 'Tool Integrations',
         page: 'tool-integrations',
         icon: Puzzle,
@@ -90,17 +96,6 @@ const navigationItems: NavItem[] = [
       {
         title: 'Nostr Integration',
         page: 'nostr',
-        icon: BookOpen,
-      },
-    ],
-  },
-  {
-    title: 'Implementation',
-    icon: Puzzle,
-    children: [
-      {
-        title: 'Otrta Client',
-        page: 'otrta-client',
         icon: BookOpen,
       },
     ],

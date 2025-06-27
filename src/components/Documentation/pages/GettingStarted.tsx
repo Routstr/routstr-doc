@@ -3,26 +3,40 @@ import React from 'react';
 export function GettingStarted() {
   return (
     <div className="max-w-5xl mx-auto px-8 py-8 select-text">
-      <h1 className="text-4xl font-bold mb-6">Getting Started with otrta 402 gateway</h1>
+      <h1 className="text-4xl font-bold mb-6">Getting Started</h1>
       <p className="text-lg text-muted-foreground mb-8">
-        Welcome to otrta 402 gateway - the privacy-focused payment gateway for AI services using Cashu e-cash
+        Welcome to Otrta Routstr 402 gateway - the privacy-focused payment gateway for AI services using Cashu e-cash
         technology.
       </p>
 
       <div className="space-y-12">
         <section>
-          <h2 className="text-2xl font-bold mb-4">What is otrta 402 gateway?</h2>
+          <h2 className="text-2xl font-bold mb-4">What is Otrta Routstr?</h2>
           <div className="space-y-4 text-muted-foreground">
             <p>
-              otrta 402 gateway is a revolutionary payment solution that enables anonymous access to OpenAI's Large
-              Language Models using Cashu e-cash notes. Our system combines the privacy benefits of e-cash with the
-              precision of millisatoshi payments, creating a truly private and efficient way to pay for AI services.
+              Otrta Routstr is a cutting-edge e-cash payment system that enables secure, private, and instant digital
+              transactions. Built on the Cashu protocol and seamlessly integrated with the Routstr Marketplace and
+              Roustr AI ecosystem.
+            </p>
+            <p>
+              Our system combines the privacy benefits of e-cash with the precision of millisatoshi payments, creating a
+              truly private and efficient way to pay for AI services.
             </p>
             <p>
               Unlike traditional payment methods that require accounts, personal information, and leave digital
               footprints, our gateway allows you to pay exactly what you consume without revealing your identity or
               usage patterns.
             </p>
+            <ul className="space-y-2 text-muted-foreground">
+              <li className="flex items-center">
+                <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                Privacy-focused transactions
+              </li>
+              <li className="flex items-center">
+                <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                Routstr Marketplace integration
+              </li>
+            </ul>
           </div>
         </section>
 

@@ -16,6 +16,7 @@ import {BackgroundPattern} from '@/components/Shared/BackgroundPattern';
 import {VisionSpec} from '@/components/Documentation/pages/Vision';
 import {NostrProtocols} from '@/components/Documentation/pages/NostrProtocols';
 import {OtrtaClient} from '@/components/Documentation/pages/OtrtaClient';
+import {Routstr} from '@/components/Documentation/pages/Routstr';
 
 type PageType =
   | 'getting-started'
@@ -27,7 +28,8 @@ type PageType =
   | 'provider-protocols'
   | 'vision'
   | 'nostr'
-  | 'otrta-client';
+  | 'otrta-client'
+  | 'routstr';
 
 const validSections: PageType[] = [
   'getting-started',
@@ -40,6 +42,7 @@ const validSections: PageType[] = [
   'vision',
   'nostr',
   'otrta-client',
+  'routstr',
 ];
 
 interface DocumentationSectionPageProps {
@@ -79,6 +82,8 @@ export default function DocumentationSectionPage({params}: DocumentationSectionP
         return <NostrProtocols />;
       case 'otrta-client':
         return <OtrtaClient />;
+      case 'routstr':
+        return <Routstr />;
       default:
         return <GettingStarted />;
     }
