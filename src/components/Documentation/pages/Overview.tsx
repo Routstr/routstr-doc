@@ -32,14 +32,16 @@ export function Overview() {
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold mb-2">🏠 Dashboard</h4>
                 <p className="text-muted-foreground">
-                  View wallet balance, redeem eCash tokens, collect cashback, and manage your current provider—all with real-time updates.
+                  View wallet balance, redeem eCash tokens, collect cashback, and manage your current provider—all with
+                  real-time updates.
                 </p>
               </div>
 
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold mb-2">🔗 Providers</h4>
                 <p className="text-muted-foreground">
-                  Browse, add, and manage Nostr marketplace providers. Set defaults, add custom providers, and refresh the list in real time.
+                  Browse, add, and manage Nostr marketplace providers. Set defaults, add custom providers, and refresh
+                  the list in real time.
                 </p>
               </div>
 
@@ -60,7 +62,8 @@ export function Overview() {
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold mb-2">⚙️ Settings</h4>
                 <p className="text-muted-foreground">
-                  Configure Nostr authentication, manage wallets, mints, and relays, and monitor connection status securely.
+                  Configure Nostr authentication, manage wallets, mints, and relays, and monitor connection status
+                  securely.
                 </p>
               </div>
 
@@ -70,40 +73,6 @@ export function Overview() {
                   Secure login and registration with Nostr key support and extension integration.
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Use Cases</h2>
-          <div className="space-y-4">
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-semibold mb-2">🔍 Provider Discovery</h4>
-              <p className="text-muted-foreground">
-                Find and connect with service providers through Routstr Marketplace. Pay them directly with instant,
-                private e-cash payments while maintaining complete transaction privacy.
-              </p>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-semibold mb-2">🎯 Smart Micropayments</h4>
-              <p className="text-muted-foreground">
-                AI-optimized routing for small transactions like content tips, API calls, or pay-per-use services with
-                intelligent fee optimization.
-              </p>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-semibold mb-2">🌍 Global Commerce</h4>
-              <p className="text-muted-foreground">
-                Cross-border transactions powered by AI routing algorithms that find the best paths while maintaining
-                privacy and minimizing costs.
-              </p>
-            </div>
-            <div className="p-4 border rounded-lg">
-              <h4 className="font-semibold mb-2">🤖 AI-Enhanced Services</h4>
-              <p className="text-muted-foreground">
-                Access AI-powered services within the Routstr ecosystem, paying seamlessly with e-cash while benefiting
-                from personalized experiences.
-              </p>
             </div>
           </div>
         </section>

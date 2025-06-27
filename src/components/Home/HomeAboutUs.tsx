@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export const HomeAboutUs = () => {
   return (
-    <section className="mx-auto px-6 lg:px-0">
+    <section className="container space-y-8 py-24 md:py-32 mx-auto px-6 lg:px-8">
       <h2 className="text-5xl font-bold text-center">The Micropayment Challenge</h2>
       <p className="text-lg text-muted-foreground text-center mt-4 max-w-4xl mx-auto">
         Bitcoin&apos;s 1 satoshi minimum creates inefficiencies for AI micropayments. Our solution enables exact
@@ -70,9 +70,9 @@ export const HomeAboutUs = () => {
           <Image
             src="/images/wallet.jfif"
             alt="E-cash payment architecture"
-            width={1026}
-            height={899}
-            className="w-[100%] h-[100%] rounded-xl object-cover"
+            width={800}
+            height={600}
+            className="w-[90%] h-auto mx-auto my-4 rounded-xl object-cover"
             priority
           />
         </Card>

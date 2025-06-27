@@ -1,6 +1,6 @@
 import React from 'react';
 import {Card, CardContent, CardHeader, CardTitle} from '../../ui/card';
-import {Server, ArrowUpRight, Wallet, Shield, Code, Database} from 'lucide-react';
+import {ArrowUpRight} from 'lucide-react';
 import {motion} from 'framer-motion';
 import {GithubLogo} from '@/components/ui/Icons';
 
