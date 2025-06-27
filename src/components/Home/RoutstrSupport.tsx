@@ -12,6 +12,7 @@ export const RoutstrSupport = () => {
   return (
     <section className="py-10 md:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <LogoFusion />
         <motion.div
           initial={{opacity: 0, y: 20}}
           animate={{opacity: 1, y: 0}}
@@ -48,7 +49,6 @@ export const RoutstrSupport = () => {
           </p>
         </motion.div>
 
-        <LogoFusion />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <motion.div
             initial={{opacity: 0, y: 20}}

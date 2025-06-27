@@ -19,6 +19,22 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'otrta',
   description: 'otrta 402 gateway',
+  icons: {
+    icon: [
+      {
+        url: '/otrta.svg',
+        type: 'image/svg+xml',
+        sizes: '400x400',
+      },
+    ],
+    apple: [
+      {
+        url: '/otrta.svg',
+        type: 'image/svg+xml',
+        sizes: '400x400',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

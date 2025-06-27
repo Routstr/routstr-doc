@@ -10,9 +10,7 @@ import {DecentralizedProtocols} from '@/components/Home/DecentralizedProtocols';
 
 export default function Home() {
   return (
-    <div
-      className="w-full min-h-screen flex flex-col overflow-x-hidden"
-      style={{zIndex: '1', position: 'relative'}}>
+    <div className="w-full min-h-screen flex flex-col overflow-x-hidden" style={{zIndex: '1', position: 'relative'}}>
       <Navbar />
       <div className="flex-1 w-full">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
