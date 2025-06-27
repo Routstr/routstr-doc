@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {Button} from '../ui/button';
 import {Card, CardContent, CardHeader, CardTitle} from '../ui/card';
+import LogoFusion from './LogoFusion';
 
 export const RoutstrSupport = () => {
   return (
@@ -47,6 +48,7 @@ export const RoutstrSupport = () => {
           </p>
         </motion.div>
 
+        <LogoFusion />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <motion.div
             initial={{opacity: 0, y: 20}}

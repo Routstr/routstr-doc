@@ -8,13 +8,14 @@ import {GettingStarted} from '@/components/Documentation/pages/GettingStarted';
 import {Installation} from '@/components/Documentation/pages/Installation';
 import {HowToUse} from '@/components/Documentation/pages/HowToUse';
 import {ToolIntegrations} from '@/components/Documentation/pages/ToolIntegrations';
-import {AdvancedSetup} from '@/components/Documentation/pages/AdvancedSetup';
+import {Overview} from '@/components/Documentation/pages/Overview';
 import {XCashuProtocols} from '@/components/Documentation/pages/XCashuProtocols';
 import {ProviderProtocols} from '@/components/Documentation/pages/ProviderProtocols';
 import {Navbar} from '@/components/NavBar/Navbar';
 import {BackgroundPattern} from '@/components/Shared/BackgroundPattern';
 import {VisionSpec} from '@/components/Documentation/pages/Vision';
 import {NostrProtocols} from '@/components/Documentation/pages/NostrProtocols';
+import {OtrtaClient} from '@/components/Documentation/pages/OtrtaClient';
 
 type PageType =
   | 'getting-started'
@@ -25,7 +26,8 @@ type PageType =
   | 'x-cashu-protocols'
   | 'provider-protocols'
   | 'vision'
-  | 'nostr';
+  | 'nostr'
+  | 'otrta-client';
 
 const validSections: PageType[] = [
   'getting-started',
@@ -37,6 +39,7 @@ const validSections: PageType[] = [
   'provider-protocols',
   'vision',
   'nostr',
+  'otrta-client',
 ];
 
 interface DocumentationSectionPageProps {
@@ -62,10 +65,10 @@ export default function DocumentationSectionPage({params}: DocumentationSectionP
         return <Installation />;
       case 'how-to-use':
         return <HowToUse />;
+      case 'advanced-setup':
+        return <Overview />;
       case 'tool-integrations':
         return <ToolIntegrations />;
-      case 'advanced-setup':
-        return <AdvancedSetup />;
       case 'x-cashu-protocols':
         return <XCashuProtocols />;
       case 'provider-protocols':
@@ -74,6 +77,8 @@ export default function DocumentationSectionPage({params}: DocumentationSectionP
         return <VisionSpec />;
       case 'nostr':
         return <NostrProtocols />;
+      case 'otrta-client':
+        return <OtrtaClient />;
       default:
         return <GettingStarted />;
     }

@@ -6,7 +6,7 @@ import HomeFeatures from '@/components/Home/HomeFeatures';
 import {HowItWorks} from '@/components/Home/HowItWorks';
 import {RoutstrSupport} from '@/components/Home/RoutstrSupport';
 import MajorApps from '@/components/Home/MajorApps';
-import LogoFusion from '@/components/Home/LogoFusion';
+import {DecentralizedProtocols} from '@/components/Home/DecentralizedProtocols';
 
 export default function Home() {
   return (
@@ -15,13 +15,13 @@ export default function Home() {
       style={{zIndex: '1', position: 'relative'}}>
       <div className="max-w-screen-lg flex flex-col justify-center">
         <Navbar />
-        <LogoFusion />
         <HomeHero />
+        <RoutstrSupport />
         <MajorApps />
+        <DecentralizedProtocols />
         <HomeAboutUs />
         <HomeFeatures />
         <HowItWorks />
-        <RoutstrSupport />
         <BackgroundPattern />
       </div>
     </div>

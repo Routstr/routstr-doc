@@ -14,7 +14,8 @@ export type PageType =
   | 'x-cashu-protocols'
   | 'provider-protocols'
   | 'vision'
-  | 'nostr';
+  | 'nostr'
+  | 'otrta-client';
 
 interface NavItem {
   title: string;
@@ -55,14 +56,14 @@ const navigationItems: NavItem[] = [
     icon: Zap,
     children: [
       {
+        title: 'Overview',
+        page: 'advanced-setup',
+        icon: Settings,
+      },
+      {
         title: 'Tool Integrations',
         page: 'tool-integrations',
         icon: Puzzle,
-      },
-      {
-        title: 'Advanced Setup',
-        page: 'advanced-setup',
-        icon: Settings,
       },
     ],
   },
@@ -88,6 +89,17 @@ const navigationItems: NavItem[] = [
       {
         title: 'Vision',
         page: 'vision',
+        icon: BookOpen,
+      },
+    ],
+  },
+  {
+    title: 'Implementation',
+    icon: Puzzle,
+    children: [
+      {
+        title: 'Otrta Client',
+        page: 'otrta-client',
         icon: BookOpen,
       },
     ],

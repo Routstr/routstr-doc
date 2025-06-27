@@ -16,7 +16,7 @@ export function HowToUse() {
             Getting started with otrta 402 gateway is simple. Replace your OpenAI endpoint and add your e-cash header.
           </p>
           <CodeBlock
-            code={`curl -X POST https://ecash.otrta.me/v1/chat/completions \\
+            code={`curl -X POST http://localhost:3333/v1/chat/completions \\
   -H "Content-Type: application/json" \\
   -H "X-Cashu: your-ecash-token" \\
   -d @request.json`}
