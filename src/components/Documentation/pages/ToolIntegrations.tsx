@@ -7,7 +7,7 @@ import {ExternalLink, Code, Sparkles, Layers, Cpu} from 'lucide-react';
 
 export function ToolIntegrations() {
   return (
-    <div className="max-w-5xl mx-auto px-8 py-8 select-text">
+    <div className="max-w-6xl mx-auto p-6 space-y-8">
       <h1 className="text-4xl font-bold mb-6">Tool Integrations</h1>
       <p className="text-lg text-muted-foreground mb-8">
         Seamlessly integrate otrta 402 gateway with your favorite AI tools and development environments.
@@ -18,8 +18,7 @@ export function ToolIntegrations() {
         <section>
           <h2 className="text-3xl font-bold mb-6">Major AI Coding Apps</h2>
           <p className="text-muted-foreground mb-8">
-            The most popular AI coding assistants trust otrta 402 gateway for private, efficient payments. See how these
-            tools work in action:
+            The most popular AI coding assistants. See how these tools work in action:
           </p>
 
           {/* Cline */}

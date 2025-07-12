@@ -2,7 +2,7 @@
 
 import React, {useState} from 'react';
 import Link from 'next/link';
-import {Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription} from '@/components/ui/sheet';
+import {Sheet, SheetContent, SheetTrigger, SheetTitle} from '@/components/ui/sheet';
 import {Button} from '@/components/ui/button';
 import {Menu, BookOpen, Download, Settings, Puzzle, Zap, Play, CreditCard} from 'lucide-react';
 import {cn} from '@/lib/utils';
@@ -51,22 +51,6 @@ const navigationItems: NavItem[] = [
         page: 'how-to-use',
         icon: BookOpen,
       },
-    ],
-  },
-  {
-    title: 'Guides',
-    icon: Zap,
-    children: [
-      {
-        title: 'Overview',
-        page: 'advanced-setup',
-        icon: Settings,
-      },
-      {
-        title: 'Routstr',
-        page: 'routstr',
-        icon: Zap,
-      },
       {
         title: 'Tool Integrations',
         page: 'tool-integrations',
@@ -75,11 +59,27 @@ const navigationItems: NavItem[] = [
     ],
   },
   {
+    title: 'Guides',
+    icon: Zap,
+    children: [
+      {
+        title: 'Routstr',
+        page: 'routstr',
+        icon: Zap,
+      },
+      {
+        title: 'Nostr Integration',
+        page: 'nostr',
+        icon: BookOpen,
+      },
+    ],
+  },
+  {
     title: 'Protocol',
     icon: CreditCard,
     children: [
       {
-        title: 'X-Cashu',
+        title: 'Payment',
         page: 'x-cashu-protocols',
         icon: CreditCard,
       },
@@ -91,11 +91,6 @@ const navigationItems: NavItem[] = [
       {
         title: 'Vision',
         page: 'vision',
-        icon: BookOpen,
-      },
-      {
-        title: 'Nostr Integration',
-        page: 'nostr',
         icon: BookOpen,
       },
     ],
@@ -176,9 +171,6 @@ export function MobileDocsNav({currentPage}: MobileDocsNavProps) {
           <div className="p-6">
             <div className="mb-6">
               <SheetTitle className="text-lg font-semibold text-foreground">Documentation</SheetTitle>
-              <SheetDescription className="text-sm text-muted-foreground mt-1">
-                Learn how to integrate otrta 402 gateway
-              </SheetDescription>
             </div>
 
             <nav className="space-y-3">

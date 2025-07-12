@@ -14,7 +14,7 @@ export function DecentralizedProtocols() {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Otrta Routstr leverages two revolutionary protocols that are reshaping the decentralized landscape,
+            Routstr Client leverages two revolutionary protocols that are reshaping the decentralized landscape,
             combining the power of censorship-resistant communication with private digital cash.
           </p>
         </div>
@@ -139,15 +139,15 @@ export function DecentralizedProtocols() {
           <div className="p-8 border-2 border-dashed border-purple-300 dark:border-purple-700 rounded-lg bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-950/20 dark:to-indigo-950/20">
             <div className="flex justify-center mb-4">
               <div className="relative">
-                <Image src="/otrta.png" alt="Otrta Logo" width={60} height={60} className="rounded-lg" />
+                <Image src="/routstr.png" alt="Otrta Logo" width={60} height={60} className="rounded-lg" />
               </div>
             </div>
             <h3 className="text-2xl font-bold mb-4 text-purple-800 dark:text-purple-200">🚀 The Perfect Synergy</h3>
             <p className="text-purple-700 dark:text-purple-300 max-w-4xl mx-auto text-lg">
               By combining <strong>Nostr's censorship-resistant communication</strong> with{' '}
-              <strong>Cashu's private payments</strong>, Otrta creates the world's first truly decentralized marketplace
-              where you can discover providers, communicate securely, and transact privately—all without sacrificing
-              your freedom or privacy.
+              <strong>Cashu's private payments</strong>, Routstr client creates the world's first truly decentralized
+              marketplace where you can discover providers, communicate securely, and transact privately—all without
+              sacrificing your freedom or privacy.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">

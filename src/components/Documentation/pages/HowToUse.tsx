@@ -3,10 +3,10 @@ import {CodeBlock} from '@/components/ui/code-block';
 
 export function HowToUse() {
   return (
-    <div className="max-w-5xl mx-auto px-8 py-8 select-text">
+    <div className="max-w-6xl mx-auto p-6 space-y-8">
       <h1 className="text-4xl font-bold mb-6">How to Use</h1>
       <p className="text-lg text-muted-foreground mb-8">
-        Learn how to make your first API calls and integrate Otrta Routstr 402 gateway into your applications.
+        Learn how to make your first API calls and integrate Routstr Client 402 gateway into your applications.
       </p>
 
       <div className="space-y-12">

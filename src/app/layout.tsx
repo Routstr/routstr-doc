@@ -22,14 +22,14 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/otrta.svg',
+        url: '/routstr.png',
         type: 'image/svg+xml',
         sizes: '400x400',
       },
     ],
     apple: [
       {
-        url: '/otrta.svg',
+        url: '/routstr.png',
         type: 'image/svg+xml',
         sizes: '400x400',
       },

@@ -1,42 +1,96 @@
 import React from 'react';
+import Image from 'next/image';
 
 export function GettingStarted() {
   return (
-    <div className="max-w-5xl mx-auto px-8 py-8 select-text">
-      <h1 className="text-4xl font-bold mb-6">Getting Started</h1>
-      <p className="text-lg text-muted-foreground mb-8">
-        Welcome to Otrta Routstr 402 gateway - the privacy-focused payment gateway for AI services using Cashu e-cash
-        technology.
-      </p>
-
+    <div className="max-w-6xl mx-auto p-6 space-y-8">
+      <h1 className="text-4xl font-bold mb-6">Client Interface Overview</h1>
       <div className="space-y-12">
         <section>
-          <h2 className="text-2xl font-bold mb-4">What is Otrta Routstr?</h2>
-          <div className="space-y-4 text-muted-foreground">
-            <p>
-              Otrta Routstr is a cutting-edge e-cash payment system that enables secure, private, and instant digital
-              transactions. Built on the Cashu protocol and seamlessly integrated with the Routstr Marketplace and
-              Roustr AI ecosystem.
-            </p>
-            <p>
-              Our system combines the privacy benefits of e-cash with the precision of millisatoshi payments, creating a
-              truly private and efficient way to pay for AI services.
-            </p>
-            <p>
-              Unlike traditional payment methods that require accounts, personal information, and leave digital
-              footprints, our gateway allows you to pay exactly what you consume without revealing your identity or
-              usage patterns.
-            </p>
-            <ul className="space-y-2 text-muted-foreground">
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
-                Privacy-focused transactions
-              </li>
-              <li className="flex items-center">
-                <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                Routstr Marketplace integration
-              </li>
-            </ul>
+          <div className="w-full mb-8">
+            <Image
+              src="/client.gif"
+              alt="OTRTA Client Interface Demo"
+              width={1200}
+              height={600}
+              className="w-full h-auto rounded-lg border shadow-md"
+            />
+          </div>
+          <div className="space-y-6">
+            <section>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  Routstr Client is a cutting-edge e-cash payment system that enables secure, private, and instant
+                  digital transactions. Built on the Cashu protocol and seamlessly integrated with the Routstr
+                  Marketplace and Roustr AI ecosystem.
+                </p>
+                <p>
+                  Our system combines the privacy benefits of e-cash with the precision of millisatoshi payments,
+                  creating a truly private and efficient way to pay for AI services.
+                </p>
+                <p>
+                  Unlike traditional payment methods that require accounts, personal information, and leave digital
+                  footprints, our gateway allows you to pay exactly what you consume without revealing your identity or
+                  usage patterns.
+                </p>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                    Privacy-focused transactions
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                    Routstr Marketplace integration
+                  </li>
+                </ul>
+              </div>
+            </section>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-semibold mb-2">🏠 Dashboard</h4>
+                <p className="text-muted-foreground">
+                  View wallet balance, redeem eCash tokens, collect cashback, and manage your current provider—all with
+                  real-time updates.
+                </p>
+              </div>
+
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-semibold mb-2">🔗 Providers</h4>
+                <p className="text-muted-foreground">
+                  Browse, add, and manage Nostr marketplace providers. Set defaults, add custom providers, and refresh
+                  the list in real time.
+                </p>
+              </div>
+
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-semibold mb-2">🤖 Models</h4>
+                <p className="text-muted-foreground">
+                  Explore and test AI models, view pricing, and switch between proxy and OpenAI models.
+                </p>
+              </div>
+
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-semibold mb-2">📊 Transactions</h4>
+                <p className="text-muted-foreground">
+                  Monitor completed and pending transactions with real-time auto-refresh and detailed status indicators.
+                </p>
+              </div>
+
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-semibold mb-2">⚙️ Settings</h4>
+                <p className="text-muted-foreground">
+                  Configure Nostr authentication, manage wallets, mints, and relays, and monitor connection status
+                  securely.
+                </p>
+              </div>
+
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-semibold mb-2">🔐 Authentication</h4>
+                <p className="text-muted-foreground">
+                  Secure login and registration with Nostr key support and extension integration.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 

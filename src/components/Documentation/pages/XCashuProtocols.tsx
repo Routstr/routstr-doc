@@ -10,7 +10,7 @@ export function XCashuProtocols() {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">X-Cashu Payment Protocol</h1>
+        <h1 className="text-4xl font-bold tracking-tight">Payment Protocol</h1>
         <p className="text-xl text-muted-foreground">
           Multiple interaction models for using the X-Cashu header to pay for access to LLM or other AI services over
           HTTP.

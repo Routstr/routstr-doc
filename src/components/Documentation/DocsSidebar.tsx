@@ -32,8 +32,8 @@ interface DocsSidebarProps {
 
 const navigationItems: NavItem[] = [
   {
-    title: 'Getting Started',
-    icon: BookOpen,
+    title: 'Routstr-Client',
+    icon: Zap,
     children: [
       {
         title: 'Introduction',
@@ -50,22 +50,6 @@ const navigationItems: NavItem[] = [
         page: 'how-to-use',
         icon: BookOpen,
       },
-    ],
-  },
-  {
-    title: 'Guides',
-    icon: Zap,
-    children: [
-      {
-        title: 'Overview',
-        page: 'advanced-setup',
-        icon: Settings,
-      },
-      {
-        title: 'Routstr',
-        page: 'routstr',
-        icon: Zap,
-      },
       {
         title: 'Tool Integrations',
         page: 'tool-integrations',
@@ -74,11 +58,21 @@ const navigationItems: NavItem[] = [
     ],
   },
   {
+    title: 'Routstr',
+    page: 'routstr',
+    icon: Zap,
+  },
+  {
+    title: 'Nostr',
+    page: 'nostr',
+    icon: BookOpen,
+  },
+  {
     title: 'Protocol',
     icon: CreditCard,
     children: [
       {
-        title: 'X-Cashu',
+        title: 'Payment',
         page: 'x-cashu-protocols',
         icon: CreditCard,
       },
@@ -87,17 +81,12 @@ const navigationItems: NavItem[] = [
         page: 'provider-protocols',
         icon: Settings,
       },
-      {
-        title: 'Nostr Integration',
-        page: 'nostr',
-        icon: BookOpen,
-      },
-      {
-        title: 'Vision',
-        page: 'vision',
-        icon: BookOpen,
-      },
     ],
+  },
+  {
+    title: 'Vision',
+    page: 'vision',
+    icon: BookOpen,
   },
 ];
 
@@ -177,7 +166,6 @@ export function DocsSidebar({currentPage}: DocsSidebarProps) {
       <div className="p-6">
         <div className="mb-6">
           <h2 className="text-lg font-semibold text-foreground">Documentation</h2>
-          <p className="text-sm text-muted-foreground mt-1">Learn how to integrate otrta 402 gateway</p>
         </div>
 
         <nav className="space-y-3">

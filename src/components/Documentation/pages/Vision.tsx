@@ -3,6 +3,7 @@ import {Card, CardContent, CardHeader, CardTitle} from '../../ui/card';
 import {Server, ArrowUpRight, Settings, Shield} from 'lucide-react';
 import {motion} from 'framer-motion';
 import {GithubLogo} from '@/components/ui/Icons';
+import {Alert, AlertDescription} from '@/components/ui/alert';
 
 export function VisionSpec() {
   return (
@@ -80,6 +81,115 @@ export function VisionSpec() {
           </CardContent>
         </Card>
 
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">Dynamic Cost Management</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-muted-foreground">
+              The X-Cashu protocol supports dynamic, usage-based pricing that enables intelligent cost management based
+              on actual resource consumption. This approach protects providers from potential losses while maintaining
+              fair pricing for clients.
+            </p>
+
+            <Alert>
+              <AlertDescription className="text-amber-500 dark:text-amber-400">
+                <strong>Warning:</strong> Fixed per-request pricing can be risky. If a user's request requires more
+                tokens or computational resources than anticipated, providers may incur losses.
+              </AlertDescription>
+            </Alert>
+
+            <div>
+              <h4 className="font-semibold mb-2">Recommended Pricing Strategies:</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Card className="p-4 bg-muted/50">
+                  <h5 className="text-sm font-medium mb-2">Token-Based Pricing</h5>
+                  <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                    <li>Charge per input/output token</li>
+                    <li>Set minimum request cost</li>
+                    <li>Apply token-count estimation</li>
+                    <li>Include processing overhead</li>
+                  </ul>
+                </Card>
+                <Card className="p-4 bg-muted/50">
+                  <h5 className="text-sm font-medium mb-2">Dynamic Adjustments</h5>
+                  <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                    <li>Real-time load balancing</li>
+                    <li>Resource utilization tracking</li>
+                    <li>Peak/off-peak pricing</li>
+                    <li>Market demand response</li>
+                  </ul>
+                </Card>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">Cost Protection Mechanisms:</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Card className="p-4 bg-muted/50">
+                  <h5 className="text-sm font-medium mb-2">Request Analysis</h5>
+                  <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                    <li>Pre-request token estimation</li>
+                    <li>Context length validation</li>
+                    <li>Resource requirement checks</li>
+                    <li>Cost threshold alerts</li>
+                  </ul>
+                </Card>
+                <Card className="p-4 bg-muted/50">
+                  <h5 className="text-sm font-medium mb-2">Safety Measures</h5>
+                  <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                    <li>Maximum request size limits</li>
+                    <li>Automatic request splitting</li>
+                    <li>Progressive charging</li>
+                    <li>Usage monitoring</li>
+                  </ul>
+                </Card>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">Implementation Guidelines:</h4>
+              <Alert>
+                <AlertDescription>
+                  <strong>Best Practices:</strong>
+                  <ul className="list-disc list-inside space-y-1 mt-2">
+                    <li>Implement token counting and cost estimation before processing</li>
+                    <li>Set up real-time usage monitoring and alerts</li>
+                    <li>Use progressive charging for long-running requests</li>
+                    <li>
+                      Maintain pricing updates via the <code className="bg-muted px-1">/v1/models</code> endpoint
+                    </li>
+                    <li>Consider implementing request queuing during high demand</li>
+                  </ul>
+                </AlertDescription>
+              </Alert>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">Benefits of Dynamic Pricing:</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Card className="p-4 bg-muted/50">
+                  <h5 className="text-sm font-medium mb-2">For Providers</h5>
+                  <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                    <li>Cost-based revenue protection</li>
+                    <li>Resource optimization</li>
+                    <li>Sustainable operations</li>
+                    <li>Flexible scaling</li>
+                  </ul>
+                </Card>
+                <Card className="p-4 bg-muted/50">
+                  <h5 className="text-sm font-medium mb-2">For Clients</h5>
+                  <ul className="list-disc list-inside text-muted-foreground text-sm space-y-1">
+                    <li>Fair usage-based pricing</li>
+                    <li>Transparent cost structure</li>
+                    <li>Predictable expenses</li>
+                    <li>Quality guarantees</li>
+                  </ul>
+                </Card>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
         {/* GitHub Repository Link */}
         <motion.div
           initial={{opacity: 0, y: 20}}
