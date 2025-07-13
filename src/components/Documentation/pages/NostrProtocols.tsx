@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {Card, CardContent, CardHeader, CardTitle} from '../../ui/card';
 import {Badge} from '../../ui/badge';
-import {Alert, AlertDescription} from '../../ui/alert';
+
 import {Collapsible, CollapsibleContent, CollapsibleTrigger} from '../../ui/collapsible';
 import {Button} from '../../ui/button';
-import {Network, Users, Shield, ChevronDown, ChevronRight} from 'lucide-react';
+import {Network, Users, ChevronDown, ChevronRight} from 'lucide-react';
 
 export function NostrProtocols() {
   const [isEventFieldsOpen, setIsEventFieldsOpen] = useState(false);

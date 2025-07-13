@@ -17,7 +17,8 @@ export type PageType =
   | 'nostr'
   | 'otrta-client'
   | 'nostr-protocols'
-  | 'routstr';
+  | 'routstr'
+  | 'routstr-integration';
 
 interface NavItem {
   title: string;
@@ -34,8 +35,19 @@ interface DocsSidebarProps {
 const navigationItems: NavItem[] = [
   {
     title: 'Routstr',
-    page: 'routstr',
     icon: Zap,
+    children: [
+      {
+        title: 'Introduction',
+        page: 'routstr',
+        icon: Play,
+      },
+      {
+        title: 'Integrations',
+        page: 'routstr-integration',
+        icon: Puzzle,
+      },
+    ],
   },
   {
     title: 'Routstr-Client',

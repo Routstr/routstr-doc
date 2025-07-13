@@ -1,7 +1,7 @@
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {GithubLogo} from '@/components/ui/Icons';
 import {motion} from 'framer-motion';
-import {ArrowUpRight} from 'lucide-react';
+import {ArrowUpRight, Eye, Shield, Zap} from 'lucide-react';
 import React from 'react';
 
 export function Routstr() {
@@ -12,6 +12,51 @@ export function Routstr() {
         A Decentralised LLM Routing Marketplace that brings the convenience of the OpenRouter experience to the
         permissionless, censorship‑resistant world of Nostr and Bitcoin.
       </p>
+
+      <section className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <Card className="border-l-4 border-l-blue-500">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Shield className="w-5 h-5 text-blue-500" />
+                <h3 className="font-semibold">Privacy First</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                No emails, no sign-ups, no identity tracking. Just Bitcoin and privacy.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-l-4 border-l-green-500">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Zap className="w-5 h-5 text-green-500" />
+                <h3 className="font-semibold">Instant Payments</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">Pay per usage with Lightning-fast Cashu tokens.</p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-l-4 border-l-purple-500">
+            <CardContent className="p-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Eye className="w-5 h-5 text-purple-500" />
+                <h3 className="font-semibold">Top AI Models</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">Access all the latest AI models without the surveillance.</p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/30 dark:to-purple-950/30 rounded-lg p-6">
+          <h2 className="text-2xl font-bold mb-4">Why Routstr?</h2>
+          <p className="text-muted-foreground mb-4">
+            If using Cursor or Claude Code while billing to your credit card is the gold standard for AI coding—if you
+            don't mind using your real identity and being spied upon—then Roo Code and Goose, plugging into Routstr, are
+            the gold standard if you are Satoshi and want to stay private.
+          </p>
+        </div>
+      </section>
 
       <div className="space-y-12">
         {/* Ecosystem Integration Section */}

@@ -18,6 +18,7 @@ import {NostrProtocols} from '@/components/Documentation/pages/NostrProtocols';
 import {OtrtaClient} from '@/components/Documentation/pages/OtrtaClient';
 import {Routstr} from '@/components/Documentation/pages/Routstr';
 import {Nostr} from '@/components/Documentation/pages/Nostr';
+import {RoutstrIntegration} from '@/components/Documentation/pages/RoutstrIntegration';
 
 type PageType =
   | 'getting-started'
@@ -31,6 +32,7 @@ type PageType =
   | 'nostr'
   | 'otrta-client'
   | 'nostr-protocols'
+  | 'routstr-integration'
   | 'routstr';
 
 const validSections: PageType[] = [
@@ -46,6 +48,7 @@ const validSections: PageType[] = [
   'otrta-client',
   'nostr-protocols',
   'routstr',
+  'routstr-integration',
 ];
 
 interface DocumentationSectionPageProps {
@@ -89,6 +92,8 @@ export default function DocumentationSectionPage({params}: DocumentationSectionP
         return <Routstr />;
       case 'nostr-protocols':
         return <NostrProtocols />;
+      case 'routstr-integration':
+        return <RoutstrIntegration />;
       default:
         return <GettingStarted />;
     }
