@@ -26,7 +26,7 @@ export const Logo = ({className, size = 'lg', ...props}: LogoProps) => {
   return (
     <div className={clsx('flex m-2 items-center justify-center', sizeClasses[size], className)} {...props}>
       <Image
-        src="/otrta.svg"
+        src="/routstr.png"
         alt="logo"
         width={imageSizes[size].width}
         height={imageSizes[size].height}

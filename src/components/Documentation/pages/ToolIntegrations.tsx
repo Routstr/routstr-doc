@@ -10,7 +10,7 @@ export function ToolIntegrations() {
     <div className="max-w-6xl mx-auto p-6 space-y-8">
       <h1 className="text-4xl font-bold mb-6">Tool Integrations</h1>
       <p className="text-lg text-muted-foreground mb-8">
-        Seamlessly integrate otrta 402 gateway with your favorite AI tools and development environments.
+        Seamlessly integrate Routstr-Client gateway with your favorite AI tools and development environments.
       </p>
 
       <div className="space-y-12">

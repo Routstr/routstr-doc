@@ -1,225 +1,174 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Card, CardContent, CardHeader, CardTitle} from '../../ui/card';
 import {Badge} from '../../ui/badge';
 import {Alert, AlertDescription} from '../../ui/alert';
-import {Network, Users, Shield, Star, Wallet, Key, Activity} from 'lucide-react';
+import {Collapsible, CollapsibleContent, CollapsibleTrigger} from '../../ui/collapsible';
+import {Button} from '../../ui/button';
+import {Network, Users, Shield, ChevronDown, ChevronRight} from 'lucide-react';
 
 export function NostrProtocols() {
+  const [isEventFieldsOpen, setIsEventFieldsOpen] = useState(false);
+
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">Nostr Integration</h1>
+        <h1 className="text-4xl font-bold tracking-tight">Nostr Node Discovery</h1>
         <p className="text-xl text-muted-foreground">
-          Discover how Routstr leverages Nostr's decentralized protocols to create a truly open and permissionless AI
-          marketplace ecosystem.
+          Implementation guidelines for node discovery and service announcement using Nostr events for decentralized
+          client discovery.
         </p>
       </div>
 
-      {/* Provider Discovery & Selection */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Users className="w-5 h-5" />
-            Provider Discovery & Selection
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-muted-foreground">
-            A dynamic marketplace where AI service providers publish their existence and endpoints through Nostr events,
-            enabling discovery based on reputation metrics and social proof.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-3">
-              <h4 className="font-semibold">Provider Marketplace</h4>
-              <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                <li>Event-based service announcements</li>
-                <li>Provider endpoint publishing</li>
-                <li>Service availability signals</li>
-                <li>Capability descriptions</li>
-                <li>Social engagement metrics</li>
-              </ul>
-            </div>
-
-            <div className="space-y-3">
-              <h4 className="font-semibold">Selection Criteria</h4>
-              <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                <li>Follower count and growth</li>
-                <li>Zap volume and frequency</li>
-                <li>Community endorsements</li>
-                <li>Historical uptime data</li>
-                <li>Client satisfaction scores</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <h4 className="font-semibold">Market Mechanisms</h4>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Alert>
-                <Star className="w-4 h-4" />
-                <AlertDescription>
-                  <strong>Social Proof:</strong> Provider reputation built through follower networks, zaps received, and
-                  community engagement
-                </AlertDescription>
-              </Alert>
-              <Alert>
-                <Wallet className="w-4 h-4" />
-                <AlertDescription>
-                  <strong>Economic Signals:</strong> Market-driven reputation and selection through zap-based feedback
-                  loops
-                </AlertDescription>
-              </Alert>
-              <Alert>
-                <Shield className="w-4 h-4" />
-                <AlertDescription>
-                  <strong>Trust System:</strong> Verifiable performance metrics and client feedback through signed Nostr
-                  events
-                </AlertDescription>
-              </Alert>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Routstr Marketplace */}
+      {/* Overview */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Network className="w-5 h-5" />
-            Routstr Marketplace
-            <Badge variant="outline">Permissionless</Badge>
+            Node Discovery Overview
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent>
           <p className="text-muted-foreground">
-            Experience true decentralization with Routstr's permissionless marketplace, where anyone can participate
-            without gatekeepers or approval processes.
+            Nodes announce their presence and capabilities via Nostr events for client discovery. This mechanism enables
+            decentralized service discovery without relying on centralized registries or DNS-based systems.
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <Network className="w-4 h-4" />
-                <h4 className="font-semibold">Permissionless Listing</h4>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Unlike traditional marketplaces that require approval processes, Routstr allows providers to list
-                themselves directly via Nostr events.
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground">
-                <li>No approval required</li>
-                <li>Instant marketplace entry</li>
-                <li>Direct Nostr event publishing</li>
-                <li>Censorship-resistant listings</li>
-              </ul>
-            </div>
-
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <Users className="w-4 h-4" />
-                <h4 className="font-semibold">Nostr-based Reviews</h4>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Users can publish provider reviews directly on Nostr, creating a transparent and verifiable reputation
-                system.
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground">
-                <li>Cryptographically signed reviews</li>
-                <li>Publicly verifiable feedback</li>
-                <li>Community-driven ratings</li>
-                <li>Immutable review history</li>
-              </ul>
-            </div>
-
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <Activity className="w-4 h-4" />
-                <h4 className="font-semibold">Provider Health Monitoring</h4>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Real-time provider health and status updates are published on Nostr, enabling transparent service
-                monitoring.
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground">
-                <li>@routstr_status_bot monitoring</li>
-                <li>Real-time health metrics</li>
-                <li>Automated status updates</li>
-                <li>Community transparency</li>
-              </ul>
-            </div>
-          </div>
         </CardContent>
       </Card>
 
-      {/* Nostr Data Storage */}
+      {/* Event Structure */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Key className="w-5 h-5" />
-            Nostr Data Storage
-            <Badge variant="secondary">Encrypted</Badge>
+            Node Announcement Event
+            <Badge variant="destructive">Kind: 40500</Badge>
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <p className="text-muted-foreground">
-            Leveraging Nostr's encrypted storage capabilities for secure wallet and API key management across the
-            Routstr ecosystem.
+            Service providers publish announcement events using Kind 40500 to make their services discoverable by
+            clients through the Nostr network.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <Wallet className="w-4 h-4" />
-                <h4 className="font-semibold">NIP60 Wallet Storage</h4>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Cashu wallet balances are stored securely on Nostr relays using NIP60 protocol with NIP44 encryption.
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground">
-                <li>NIP60 protocol compliance</li>
-                <li>NIP44 encrypted storage</li>
-                <li>Cashu balance management</li>
-                <li>Relay-based synchronization</li>
-                <li>Cross-device accessibility</li>
-              </ul>
-            </div>
-
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <Key className="w-4 h-4" />
-                <h4 className="font-semibold">API Key Management</h4>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Routstr API keys are stored and synchronized using NIP44 encryption, accessible at chat.routstr.com.
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-xs text-muted-foreground">
-                <li>NIP44 encrypted key storage</li>
-                <li>Cross-device synchronization</li>
-                <li>Secure key management</li>
-                <li>Relay-based distribution</li>
-                <li>User-controlled access</li>
-              </ul>
+          <div>
+            <h4 className="font-semibold mb-2">Event Structure:</h4>
+            <div className="bg-muted p-4 rounded-lg overflow-x-auto">
+              <pre className="text-sm">
+                {`{
+  "kind": 40500,
+  "created_at": <unix-timestamp>,
+  "tags": [
+    ["d", "<node-id>"],              // Unique node identifier
+    ["p", "<operator-pubkey>"],      // Operator's public key
+    ["url", "https://..."],          // Inference endpoint
+    ["onion", "<tor-onion-address>"] // Tor hidden service endpoint
+  ],
+  "content": "Human-readable description"
+}`}
+              </pre>
             </div>
           </div>
 
+          <Collapsible open={isEventFieldsOpen} onOpenChange={setIsEventFieldsOpen}>
+            <CollapsibleTrigger asChild>
+              <Button variant="outline" className="w-full justify-between">
+                <span className="font-semibold">Field Descriptions</span>
+                {isEventFieldsOpen ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+              </Button>
+            </CollapsibleTrigger>
+            <CollapsibleContent className="mt-4">
+              <div className="space-y-4">
+                <div>
+                  <h5 className="font-medium text-sm mb-2">Event Fields</h5>
+                  <div className="space-y-2 text-sm">
+                    <div className="grid grid-cols-3 gap-4 p-2 bg-muted/50 rounded">
+                      <span className="font-medium">Field</span>
+                      <span className="font-medium">Type</span>
+                      <span className="font-medium">Description</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 p-2">
+                      <code>kind</code>
+                      <span>number</span>
+                      <span>Event type identifier (40500)</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 p-2 bg-muted/30">
+                      <code>created_at</code>
+                      <span>number</span>
+                      <span>Unix timestamp of event creation</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 p-2">
+                      <code>content</code>
+                      <span>string</span>
+                      <span>Human-readable description of the service</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h5 className="font-medium text-sm mb-2">Tag Fields</h5>
+                  <div className="space-y-2 text-sm">
+                    <div className="grid grid-cols-3 gap-4 p-2 bg-muted/50 rounded">
+                      <span className="font-medium">Tag</span>
+                      <span className="font-medium">Required</span>
+                      <span className="font-medium">Description</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 p-2">
+                      <code>["d", "node-id"]</code>
+                      <span>Yes</span>
+                      <span>Unique identifier for the node</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 p-2 bg-muted/30">
+                      <code>["p", "pubkey"]</code>
+                      <span>Yes</span>
+                      <span>Public key of the node operator</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 p-2">
+                      <code>["url", "https://..."]</code>
+                      <span>Yes</span>
+                      <span>HTTP(S) endpoint for the service</span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-4 p-2 bg-muted/30">
+                      <code>["onion", "address"]</code>
+                      <span>Optional</span>
+                      <span>Tor hidden service endpoint</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
+        </CardContent>
+      </Card>
+
+      {/* Implementation Guidelines */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Users className="w-5 h-5" />
+            Implementation Guidelines
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
           <div className="space-y-4">
-            <h4 className="font-semibold">Storage Benefits</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Alert>
-                <Shield className="w-4 h-4" />
-                <AlertDescription>
-                  <strong>Decentralized Security:</strong> End-to-end encryption with no single point of failure and
-                  user-controlled data
-                </AlertDescription>
-              </Alert>
-              <Alert>
-                <Network className="w-4 h-4" />
-                <AlertDescription>
-                  <strong>Seamless Sync:</strong> Real-time synchronization across multiple devices with automatic
-                  backups
-                </AlertDescription>
-              </Alert>
+            <div>
+              <h4 className="font-semibold mb-2">For Service Providers:</h4>
+              <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm">
+                <li>Publish announcement events regularly to maintain visibility</li>
+                <li>Use consistent node-id across announcements for the same service</li>
+                <li>Include both clearnet and Tor endpoints when available</li>
+                <li>Provide meaningful descriptions in the content field</li>
+                <li>Sign events with the operator's private key for verification</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-semibold mb-2">For Clients:</h4>
+              <ul className="list-disc list-inside text-muted-foreground space-y-1 text-sm">
+                <li>Monitor multiple relays for node announcements</li>
+                <li>Verify operator signatures before trusting announcements</li>
+                <li>Cache discovered nodes and their capabilities</li>
+                <li>Implement fallback mechanisms for service discovery</li>
+                <li>Respect privacy preferences (clearnet vs Tor)</li>
+              </ul>
             </div>
           </div>
         </CardContent>

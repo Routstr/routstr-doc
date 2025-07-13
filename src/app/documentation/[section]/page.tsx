@@ -17,6 +17,7 @@ import {VisionSpec} from '@/components/Documentation/pages/Vision';
 import {NostrProtocols} from '@/components/Documentation/pages/NostrProtocols';
 import {OtrtaClient} from '@/components/Documentation/pages/OtrtaClient';
 import {Routstr} from '@/components/Documentation/pages/Routstr';
+import {Nostr} from '@/components/Documentation/pages/Nostr';
 
 type PageType =
   | 'getting-started'
@@ -29,6 +30,7 @@ type PageType =
   | 'vision'
   | 'nostr'
   | 'otrta-client'
+  | 'nostr-protocols'
   | 'routstr';
 
 const validSections: PageType[] = [
@@ -42,6 +44,7 @@ const validSections: PageType[] = [
   'vision',
   'nostr',
   'otrta-client',
+  'nostr-protocols',
   'routstr',
 ];
 
@@ -79,11 +82,13 @@ export default function DocumentationSectionPage({params}: DocumentationSectionP
       case 'vision':
         return <VisionSpec />;
       case 'nostr':
-        return <NostrProtocols />;
+        return <Nostr />;
       case 'otrta-client':
         return <OtrtaClient />;
       case 'routstr':
         return <Routstr />;
+      case 'nostr-protocols':
+        return <NostrProtocols />;
       default:
         return <GettingStarted />;
     }

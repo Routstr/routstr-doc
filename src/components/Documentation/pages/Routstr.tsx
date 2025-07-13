@@ -21,8 +21,9 @@ export function Routstr() {
             <div className="space-y-4">
               <h3 className="text-xl font-semibold">Routstr Marketplace</h3>
               <p className="text-muted-foreground">
-                OTRTA seamlessly integrates with the Routstr Marketplace, a provider discovery platform where users can
-                find and connect with service providers. Pay providers directly with e-cash for their services.
+                Routstr-Client seamlessly integrates with the Routstr Marketplace, a provider discovery platform where
+                users can find and connect with service providers. Pay providers directly with e-cash for their
+                services.
               </p>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-center">

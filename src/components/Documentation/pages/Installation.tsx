@@ -17,7 +17,7 @@ export function Installation() {
             Docker Installation
           </h2>
           <p className="text-lg text-muted-foreground">
-            Run otrta 402 gateway using Docker for easy deployment and isolation.
+            Run Routstr-Client gateway using Docker for easy deployment and isolation.
           </p>
         </div>
 
@@ -30,7 +30,9 @@ export function Installation() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <p className="text-muted-foreground">The easiest way to run otrta 402 gateway is using Docker Compose:</p>
+              <p className="text-muted-foreground">
+                The easiest way to run Routstr-Client gateway is using Docker Compose:
+              </p>
               <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg p-6 font-mono text-sm text-green-400 relative shadow-lg">
                 <Button
                   variant="ghost"

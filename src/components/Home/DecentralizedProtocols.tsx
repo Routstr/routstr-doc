@@ -55,8 +55,8 @@ export function DecentralizedProtocols() {
 
             <div className="mt-4 p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
               <p className="text-xs text-blue-600 dark:text-blue-400">
-                <strong>How Otrta uses it:</strong> Provider discovery, reputation systems, and communication channels
-                are built on Nostr's censorship-resistant infrastructure.
+                <strong>How Routstr-Client uses it:</strong> Provider discovery, reputation systems, and communication
+                channels are built on Nostr's censorship-resistant infrastructure.
               </p>
             </div>
 
@@ -111,8 +111,8 @@ export function DecentralizedProtocols() {
 
             <div className="mt-4 p-3 bg-green-100 dark:bg-green-900/30 rounded-lg">
               <p className="text-xs text-green-600 dark:text-green-400">
-                <strong>How Otrta uses it:</strong> All payments within the ecosystem use Cashu's privacy-preserving
-                e-cash tokens for truly anonymous transactions.
+                <strong>How Routstr-Client uses it:</strong> All payments within the ecosystem use Cashu's
+                privacy-preserving e-cash tokens for truly anonymous transactions.
               </p>
             </div>
 

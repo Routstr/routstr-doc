@@ -13,7 +13,8 @@ export function HowToUse() {
         <section>
           <h2 className="text-2xl font-bold mb-4">Basic Usage</h2>
           <p className="text-muted-foreground mb-4">
-            Getting started with otrta gateway is simple. Replace your OpenAI endpoint and add your e-cash header.
+            Getting started with Routstr-CLient gateway is simple. Replace your OpenAI endpoint and add your e-cash
+            header.
           </p>
           <CodeBlock
             code={`curl -X POST http://localhost:3333/v1/chat/completions \\

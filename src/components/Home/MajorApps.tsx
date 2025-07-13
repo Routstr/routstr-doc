@@ -106,7 +106,7 @@ export default function MajorApps() {
               transition={{duration: 0.6, delay: 0.3}}></motion.div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Major AI Coding Apps
-              <span className="block text-primary">Easily Adapt to otrta + eCash</span>
+              <span className="block text-primary">Easily Adapt to Routstr-Client + eCash</span>
             </h2>
             <p className="mx-auto max-w-[800px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Popular AI coding tools can seamlessly integrate with our eCash-powered infrastructure. These applications

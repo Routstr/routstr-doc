@@ -8,7 +8,7 @@ export function OtrtaClient() {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
       <div className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">Otrta Client Implementation</h1>
+        <h1 className="text-4xl font-bold tracking-tight">Routstr-Client Implementation</h1>
         <p className="text-xl text-muted-foreground">
           A privacy-focused payment gateway enabling anonymous micropayments using Cashu e-cash notes.
         </p>

@@ -23,7 +23,7 @@ export function NavigationSheet() {
         <SheetHeader className="pb-12">
           <Link href="/" className="flex items-center gap-2">
             <Logo className="font-bold" />
-            <span className="font-bold">otrta 402 gateway</span>
+            <span className="font-bold">Routstr-Client</span>
           </Link>
         </SheetHeader>
 

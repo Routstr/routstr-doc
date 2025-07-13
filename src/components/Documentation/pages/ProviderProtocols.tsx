@@ -68,8 +68,9 @@ export function ProviderProtocols() {
               requests (payment) and responses (returning change).
             </li>
             <li>
-              Providers are required to implement the <code className="bg-muted px-2 py-1 rounded">/v1/models</code>{' '}
-              endpoint for pricing and model discovery.
+              Providers are required to implement the <code className="bg-muted px-2 py-1 rounded">/infos</code> and{' '}
+              <code className="bg-muted px-2 py-1 rounded">/v1/models</code> endpoint for provider information Discovery
+              and pricing and model discovery.
             </li>
           </ul>
         </CardContent>
@@ -250,45 +251,6 @@ export function ProviderProtocols() {
               <li>Facilitates proper currency unit handling and conversion</li>
             </ul>
           </div>
-        </CardContent>
-      </Card>
-
-      {/* X-Cashu Header Specification */}
-      <Card>
-        <CardHeader>
-          <CardTitle>X-Cashu Header Specification</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div>
-            <h4 className="font-semibold mb-2">Request Headers:</h4>
-            <div className="bg-muted p-4 rounded-lg space-y-2">
-              <p>
-                <code className="text-sm">X-Cashu: &lt;cashu_token&gt;</code>
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Contains the Cashu note(s) for payment. Format depends on the chosen protocol.
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-2">Response Headers:</h4>
-            <div className="bg-muted p-4 rounded-lg space-y-2">
-              <p>
-                <code className="text-sm">X-Cashu: &lt;change_token&gt;</code>
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Contains change notes when payment exceeds actual usage cost.
-              </p>
-            </div>
-          </div>
-
-          <Alert>
-            <AlertDescription>
-              <strong>Note:</strong> The X-Cashu header must be handled securely to prevent replay attacks and ensure
-              proper note redemption.
-            </AlertDescription>
-          </Alert>
         </CardContent>
       </Card>
 
@@ -629,6 +591,45 @@ export function ProviderProtocols() {
               <li>Provider-specific configurations enable optimized client behavior</li>
             </ul>
           </div>
+        </CardContent>
+      </Card>
+
+      {/* X-Cashu Header Specification */}
+      <Card>
+        <CardHeader>
+          <CardTitle>X-Cashu Header Specification</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <h4 className="font-semibold mb-2">Request Headers:</h4>
+            <div className="bg-muted p-4 rounded-lg space-y-2">
+              <p>
+                <code className="text-sm">X-Cashu: &lt;cashu_token&gt;</code>
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Contains the Cashu note(s) for payment. Format depends on the chosen protocol.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-2">Response Headers:</h4>
+            <div className="bg-muted p-4 rounded-lg space-y-2">
+              <p>
+                <code className="text-sm">X-Cashu: &lt;change_token&gt;</code>
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Contains change notes when payment exceeds actual usage cost.
+              </p>
+            </div>
+          </div>
+
+          <Alert>
+            <AlertDescription>
+              <strong>Note:</strong> The X-Cashu header must be handled securely to prevent replay attacks and ensure
+              proper note redemption.
+            </AlertDescription>
+          </Alert>
         </CardContent>
       </Card>
     </div>

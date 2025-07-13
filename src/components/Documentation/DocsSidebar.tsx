@@ -16,6 +16,7 @@ export type PageType =
   | 'vision'
   | 'nostr'
   | 'otrta-client'
+  | 'nostr-protocols'
   | 'routstr';
 
 interface NavItem {
@@ -80,6 +81,11 @@ const navigationItems: NavItem[] = [
         title: 'Provider',
         page: 'provider-protocols',
         icon: Settings,
+      },
+      {
+        title: 'Nostr',
+        page: 'nostr-protocols',
+        icon: BookOpen,
       },
     ],
   },

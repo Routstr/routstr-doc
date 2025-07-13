@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'otrta',
-  description: 'otrta 402 gateway',
+  title: 'routstr-client',
+  description: 'routstr-client gateway',
   icons: {
     icon: [
       {

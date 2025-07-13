@@ -10,7 +10,7 @@ export function GettingStarted() {
           <div className="w-full mb-8">
             <Image
               src="/client.gif"
-              alt="OTRTA Client Interface Demo"
+              alt="Routstr-Client Interface Demo"
               width={1200}
               height={600}
               className="w-full h-auto rounded-lg border shadow-md"
