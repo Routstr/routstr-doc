@@ -36,7 +36,6 @@ interface MobileDocsNavProps {
 const navigationItems: NavItem[] = [
   {
     title: 'Routstr',
-    page: 'routstr',
     icon: Zap,
     children: [
       {
