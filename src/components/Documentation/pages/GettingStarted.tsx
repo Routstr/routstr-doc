@@ -9,11 +9,12 @@ export function GettingStarted() {
         <section>
           <div className="w-full mb-8">
             <Image
-              src="/client.gif"
+              src="/app.gif"
               alt="Routstr-Client Interface Demo"
               width={1200}
               height={600}
               className="w-full h-auto rounded-lg border shadow-md"
+              unoptimized
             />
           </div>
           <div className="space-y-6">
