@@ -68,7 +68,7 @@ export const HomeAboutUs = () => {
         </Card>
         <Card className="bg-secondary/40 shadow-none">
           <Image
-            src="/images/wallet.jfif"
+            src="/wallet.jfif"
             alt="E-cash payment architecture"
             width={800}
             height={600}

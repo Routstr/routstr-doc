@@ -22,14 +22,7 @@ export default function AboutUs() {
           </div>
 
           <div className="flex-1 flex justify-center items-center md:ml-10 ml-0 md:mt-0 mt-10 relative">
-            <Image
-              src="/images/wallet.jfif"
-              alt="card"
-              width={1026}
-              height={899}
-              className="w-[100%] h-[100%]"
-              priority
-            />
+            <Image src="/wallet.jfif" alt="card" width={1026} height={899} className="w-[100%] h-[100%]" priority />
           </div>
         </section>
       </div>

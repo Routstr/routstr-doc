@@ -27,7 +27,7 @@ export default function WalletGatewaySection() {
           <div className="md:w-1/2 flex justify-center md:justify-end">
             <div className="relative w-full max-w-md h-64 md:h-96 rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/wallet.jfif"
+                src="/wallet.jfif"
                 alt="Wallet Gateway concept: privacy-focused payments for LLMs"
                 layout="fill"
                 objectFit="cover"
