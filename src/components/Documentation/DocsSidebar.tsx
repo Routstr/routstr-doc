@@ -33,6 +33,11 @@ interface DocsSidebarProps {
 
 const navigationItems: NavItem[] = [
   {
+    title: 'Routstr',
+    page: 'routstr',
+    icon: Zap,
+  },
+  {
     title: 'Routstr-Client',
     icon: Zap,
     children: [
@@ -57,11 +62,6 @@ const navigationItems: NavItem[] = [
         icon: Puzzle,
       },
     ],
-  },
-  {
-    title: 'Routstr',
-    page: 'routstr',
-    icon: Zap,
   },
   {
     title: 'Nostr',

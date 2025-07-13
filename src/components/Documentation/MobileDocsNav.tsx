@@ -34,6 +34,11 @@ interface MobileDocsNavProps {
 
 const navigationItems: NavItem[] = [
   {
+    title: 'Routstr',
+    page: 'routstr',
+    icon: Zap,
+  },
+  {
     title: 'Getting Started',
     icon: BookOpen,
     children: [
@@ -60,20 +65,9 @@ const navigationItems: NavItem[] = [
     ],
   },
   {
-    title: 'Guides',
-    icon: Zap,
-    children: [
-      {
-        title: 'Routstr',
-        page: 'routstr',
-        icon: Zap,
-      },
-      {
-        title: 'Nostr Integration',
-        page: 'nostr',
-        icon: BookOpen,
-      },
-    ],
+    title: 'Nostr Integration',
+    page: 'nostr',
+    icon: BookOpen,
   },
   {
     title: 'Protocol',

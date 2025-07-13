@@ -26,11 +26,11 @@ export const Logo = ({className, size = 'lg', ...props}: LogoProps) => {
   return (
     <div className={clsx('flex m-2 items-center justify-center', sizeClasses[size], className)} {...props}>
       <Image
-        src="/routstr.png"
+        src="/routstr.svg"
         alt="logo"
         width={imageSizes[size].width}
         height={imageSizes[size].height}
-        className="w-full h-full object-contain mix-blend-multiply dark:mix-blend-normal rounded"
+        className="w-8 h-8 md:w-10 md:h-10 inline-block rounded-lg"
         priority
       />
     </div>
