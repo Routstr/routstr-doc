@@ -3,7 +3,7 @@
 import {use} from 'react';
 import {notFound} from 'next/navigation';
 import {DocsSidebar} from '@/components/Documentation/DocsSidebar';
-import {MobileDocsNav} from '@/components/Documentation/MobileDocsNav';
+
 import {GettingStarted} from '@/components/Documentation/pages/GettingStarted';
 import {Installation} from '@/components/Documentation/pages/Installation';
 import {HowToUse} from '@/components/Documentation/pages/HowToUse';
@@ -102,8 +102,6 @@ export default function DocumentationSectionPage({params}: DocumentationSectionP
   return (
     <div className="w-full min-h-screen flex flex-col overflow-hidden" style={{zIndex: '1', position: 'relative'}}>
       <Navbar />
-
-      <MobileDocsNav currentPage={sectionType} />
 
       <div className="flex flex-1 min-h-0">
         <aside className="hidden lg:block sticky top-16 h-[calc(100vh-4rem)]">
