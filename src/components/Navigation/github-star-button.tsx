@@ -12,7 +12,7 @@ export const GithubStarButton = () => {
       <Button variant="outline" className="rounded-full shadow-none px-3" asChild>
         <Link href={`https://github.com/${OWNER}/${REPO}`} target="_blank">
           <GithubLogo className="!h-5 !w-5" />
-          Star
+          Routstr-Client
         </Link>
       </Button>
 

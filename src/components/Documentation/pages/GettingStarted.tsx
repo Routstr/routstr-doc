@@ -79,8 +79,8 @@ export function GettingStarted() {
               <div className="p-4 border rounded-lg">
                 <h4 className="font-semibold mb-2">⚙️ Settings</h4>
                 <p className="text-muted-foreground">
-                  Configure Nostr authentication, manage wallets, mints, and relays, and monitor connection status
-                  securely.
+                  Configure Nostr authentication, manage wallets, multiple mints, and relays, and monitor connection
+                  status securely.
                 </p>
               </div>
 
@@ -121,6 +121,13 @@ export function GettingStarted() {
                 Drop-in replacement for OpenAI API endpoints. Works with existing tools and integrations.
               </p>
             </div>
+            <div className="p-6 border rounded-lg">
+              <h3 className="text-xl font-semibold mb-3 text-indigo-600">🏦 Multi-Mint Support</h3>
+              <p className="text-muted-foreground">
+                Connect to multiple Cashu mints simultaneously for enhanced redundancy, liquidity, and privacy
+                diversification.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -134,8 +141,8 @@ export function GettingStarted() {
               <div>
                 <h4 className="font-semibold mb-2">Obtain E-Cash Tokens</h4>
                 <p className="text-muted-foreground">
-                  Get Cashu e-cash tokens from a supported mint. These tokens represent your payment without revealing
-                  your identity.
+                  Get Cashu e-cash tokens from one or multiple supported mints. These tokens represent your payment
+                  without revealing your identity, and multi-mint support provides enhanced redundancy and privacy.
                 </p>
               </div>
             </div>
@@ -170,6 +177,68 @@ export function GettingStarted() {
                 <p className="text-muted-foreground">
                   Get your AI response along with updated e-cash tokens for future requests.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold mb-4">Multi-Mint Architecture</h2>
+          <div className="space-y-6">
+            <p className="text-muted-foreground">
+              Routstr Client supports connecting to multiple Cashu mints simultaneously, providing enhanced security,
+              liquidity, and privacy benefits for your e-cash transactions.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 border rounded-lg">
+                <h3 className="text-lg font-semibold mb-3 text-blue-600">🔄 Automatic Failover</h3>
+                <p className="text-muted-foreground">
+                  If one mint becomes unavailable, the client automatically switches to alternative mints to ensure
+                  uninterrupted service.
+                </p>
+              </div>
+              <div className="p-6 border rounded-lg">
+                <h3 className="text-lg font-semibold mb-3 text-green-600">💰 Enhanced Liquidity</h3>
+                <p className="text-muted-foreground">
+                  Distribute your e-cash across multiple mints to access larger liquidity pools and reduce
+                  single-point-of-failure risks.
+                </p>
+              </div>
+              <div className="p-6 border rounded-lg">
+                <h3 className="text-lg font-semibold mb-3 text-purple-600">🔒 Privacy Diversification</h3>
+                <p className="text-muted-foreground">
+                  Spread your transactions across different mints to enhance privacy and reduce correlation risks.
+                </p>
+              </div>
+              <div className="p-6 border rounded-lg">
+                <h3 className="text-lg font-semibold mb-3 text-orange-600">⚙️ Easy Management</h3>
+                <p className="text-muted-foreground">
+                  Add, remove, and configure multiple mints through the intuitive settings interface with real-time
+                  status monitoring.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/30 dark:to-purple-950/30 rounded-lg p-6">
+              <h3 className="font-semibold mb-3">🛡️ Security Benefits</h3>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                  <span>Reduces dependency on any single mint operator</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                  <span>Provides backup options if a mint experiences issues</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                  <span>Enables load balancing across different mint infrastructures</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                  <span>Allows for geographic distribution of mint services</span>
+                </div>
               </div>
             </div>
           </div>
