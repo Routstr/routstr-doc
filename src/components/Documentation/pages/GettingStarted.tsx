@@ -26,7 +26,8 @@ export function GettingStarted() {
                 </p>
                 <p>
                   Our system combines the privacy benefits of e-cash with the precision of millisatoshi payments,
-                  creating a truly private and efficient way to pay for AI services.
+                  creating a truly private and efficient way to pay for AI services. The client features both API access
+                  and an intuitive chat interface for direct AI interactions.
                 </p>
                 <p>
                   Unlike traditional payment methods that require accounts, personal information, and leave digital
@@ -41,6 +42,10 @@ export function GettingStarted() {
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
                     Routstr Marketplace integration
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                    Interactive chat interface
                   </li>
                 </ul>
               </div>
@@ -88,6 +93,14 @@ export function GettingStarted() {
                 <h4 className="font-semibold mb-2">🔐 Authentication</h4>
                 <p className="text-muted-foreground">
                   Secure login and registration with Nostr key support and extension integration.
+                </p>
+              </div>
+
+              <div className="p-4 border rounded-lg">
+                <h4 className="font-semibold mb-2">💬 Chat Interface</h4>
+                <p className="text-muted-foreground">
+                  Interactive chat interface for direct AI conversations with real-time token cost tracking and seamless
+                  e-cash payments.
                 </p>
               </div>
             </div>

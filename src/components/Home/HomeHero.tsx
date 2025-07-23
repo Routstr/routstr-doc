@@ -1,14 +1,16 @@
 import {Shapes, Shield, Zap, Coins} from 'lucide-react';
 import Link from 'next/link';
 import {Button} from '../ui/button';
-import Image from 'next/image';
 
 export const HomeHero = () => {
   return (
     <div className="-mt-4 flex items-center min-h-[80vh] justify-center px-4 sm:px-6 xl:px-0">
       <div className="text-center w-full">
         <h1 className="relative z-10 mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl sm:max-w-[25ch] mx-auto font-bold tracking-tight leading-[1.2] lg:leading-[1.2]">
-          Privacy-Focused{' '}
+          <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+            Routstr Proxy
+          </span>{' '}
+          A Privacy-Focused{' '}
           <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
             AI Payment Gateway
           </span>{' '}
@@ -32,10 +34,6 @@ export const HomeHero = () => {
           <div className="flex items-center gap-2 px-4 py-2 bg-secondary/40 rounded-full text-sm">
             <Zap className="w-4 h-4 text-blue-500" />
             X-Cashu Headers
-          </div>
-          <div className="flex items-center gap-2 px-4 py-2 bg-secondary/40 rounded-full text-sm">
-            <Image src="/routstr.png" alt="Routstr" width={16} height={16} className="w-4 h-4 rounded-md" />
-            Routstr Proxy Support
           </div>
         </div>
 

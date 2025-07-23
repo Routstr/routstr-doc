@@ -1,0 +1,8 @@
+---
+alwaysApply: true
+---
+
+
+* When making changes to the code, do not include any code comments.
+* Do not provide any code summaries, explanations, recaps, or completion statements after making your edits.
+* After each modification, always build (or compile) the project to check for errors. Ensure the code builds successfully after each round of changes before proceeding.
