@@ -274,18 +274,90 @@ export function RoutstrIntegration() {
         <div className="space-y-6">
           <Card>
             <CardHeader>
-              <CardTitle>Advanced Management</CardTitle>
+              <CardTitle>Two Ways to Manage your API Keys</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-6">
-                For better organization and easier top-ups, you can use our chat app to manage your Cashu tokens and API
-                keys.
-              </p>
+
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold mt-0.5">
+                        1
+                      </div>
+                      <div>
+                        <p className="font-medium">Simple Top-Up using Cashu/Lightning</p>
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground mb-6">
+                      Top-up your existing Cashu token as it runs out of balance without having to switch to a new Cashu token. No accounts, no sign ins, no external dependencies.
+                    </p>
+                    <div className="flex items-start gap-3">
+                      <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold mt-0.5">
+                        2
+                      </div>
+                      <div>
+                        <p className="font-medium">API Key Management with Cloud Sync</p>
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground mb-6">
+                      For better organization and easier top-ups, you can use our chat app to manage your Cashu tokens and API
+                      keys with fully encrypted cloud backups.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Simple Top-Up using Cashu/Lightning</CardTitle>
+            </CardHeader>
+            <CardContent>
 
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
-                    <h3 className="font-semibold">Chat App Management</h3>
+                    <CodeBlock code="https://routstr.com/topup" language="url" />
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold mt-0.5">
+                          1
+                        </div>
+                        <div>
+                          <p className="font-medium">Input your Cashu token/API Key</p>
+                          <p className="text-sm text-muted-foreground">Check how much balance you have</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold mt-0.5">
+                          2
+                        </div>
+                        <div>
+                          <p className="font-medium">Topup using Cashu or Lightning</p>
+                          <p className="text-sm text-muted-foreground">That's it, it's that simple. </p>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>                        
+                API Key Management with Cloud Sync
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <CodeBlock code="https://chat.routstr.com" language="url" />
                     <div className="space-y-3">
                       <div className="flex items-start gap-3">
                         <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-bold mt-0.5">
@@ -316,7 +388,6 @@ export function RoutstrIntegration() {
                       </div>
                     </div>
 
-                    <CodeBlock code="https://chat.routstr.com" language="url" />
                   </div>
                 </div>
 
