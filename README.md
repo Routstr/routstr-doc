@@ -1,15 +1,4 @@
-# otrta 402 Gateway Home Page
-
-A privacy-focused payment gateway for AI services using Cashu e-cash technology. Access OpenAI's Large Language Models anonymously with millisatoshi precision payments.
-
-## Overview
-
-otrta 402 Gateway is a revolutionary payment solution that enables anonymous access to AI services without traditional payment methods, accounts, or personal data. Built with Cashu e-cash technology, it provides:
-
-- **Complete Privacy**: No accounts, tracking, or personal data required
-- **Millisatoshi Precision**: Pay exactly what you consume
-- **API Compatibility**: Drop-in replacement for OpenAI endpoints
-- **Automatic Change**: Unused funds returned as Cashu notes
+# Routstr Home Page
 
 ## 🔧 Installation
 
