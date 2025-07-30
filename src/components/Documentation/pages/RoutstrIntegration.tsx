@@ -3,23 +3,30 @@ import {CodeBlock} from '@/components/ui/code-block';
 import {Badge} from '@/components/ui/badge';
 import {Code, Terminal, Wallet, Settings, ExternalLink} from 'lucide-react';
 import React from 'react';
+import {NavigationLinks} from './NavigationLinks';
+import {SectionHeading, SectionLinkCopy} from './SectionLinkCopy';
 
 export function RoutstrIntegration() {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
-      <section>
-        <h1 className="text-4xl font-bold mb-6">Routstr Integration Guide</h1>
+      <section id="overview">
+        <SectionHeading level={1} id="overview" className="mb-6">
+          Routstr Integration Guide
+        </SectionHeading>
         <p className="text-lg text-muted-foreground mb-8">
           Learn how to integrate Routstr with popular AI coding tools like Roo Code and Goose for private,
           Bitcoin-powered development.
         </p>
       </section>
 
-      <section>
-        <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-          <Code className="w-7 h-7 text-primary" />
+      <section id="setting-up-vscode-with-roo-code">
+        <SectionHeading
+          level={2}
+          id="setting-up-vscode-with-roo-code"
+          className="mb-6"
+          icon={<Code className="w-7 h-7 text-primary" />}>
           Setting up VSCode with Roo Code
-        </h2>
+        </SectionHeading>
 
         <div className="space-y-6">
           <Card>
@@ -124,11 +131,14 @@ export function RoutstrIntegration() {
         </div>
       </section>
 
-      <section>
-        <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-          <Terminal className="w-7 h-7 text-primary" />
+      <section id="using-goose-with-routstr">
+        <SectionHeading
+          level={2}
+          id="using-goose-with-routstr"
+          className="mb-6"
+          icon={<Terminal className="w-7 h-7 text-primary" />}>
           Using Goose with Routstr
-        </h2>
+        </SectionHeading>
 
         <div className="space-y-6">
           <Card>
@@ -197,11 +207,14 @@ export function RoutstrIntegration() {
         </div>
       </section>
 
-      <section>
-        <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-          <Wallet className="w-7 h-7 text-primary" />
+      <section id="creating-cashu-tokens">
+        <SectionHeading
+          level={2}
+          id="creating-cashu-tokens"
+          className="mb-6"
+          icon={<Wallet className="w-7 h-7 text-primary" />}>
           Creating Cashu Tokens
-        </h2>
+        </SectionHeading>
 
         <div className="space-y-6">
           <Card>
@@ -265,11 +278,14 @@ export function RoutstrIntegration() {
         </div>
       </section>
 
-      <section>
-        <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-          <Settings className="w-7 h-7 text-primary" />
+      <section id="top-up-and-key-management">
+        <SectionHeading
+          level={2}
+          id="top-up-and-key-management"
+          className="mb-6"
+          icon={<Settings className="w-7 h-7 text-primary" />}>
           Top-up and Key Management
-        </h2>
+        </SectionHeading>
 
         <div className="space-y-6">
           <Card>
@@ -311,7 +327,10 @@ export function RoutstrIntegration() {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>Simple Top-Up using Cashu/Lightning</CardTitle>
+              <CardTitle className="flex items-center">
+                Simple Top-Up using Cashu/Lightning
+                <SectionLinkCopy sectionId="simple-top-up" />
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
@@ -357,7 +376,10 @@ export function RoutstrIntegration() {
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>API Key Management with Cloud Sync</CardTitle>
+              <CardTitle className="flex items-center">
+                API Key Management with Cloud Sync
+                <SectionLinkCopy sectionId="api-key-management" />
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
@@ -420,6 +442,7 @@ export function RoutstrIntegration() {
           </Card>
         </div>
       </section>
+      <NavigationLinks currentSection="routstr-integration" variant="compact" showTitle={false} />
     </div>
   );
 }

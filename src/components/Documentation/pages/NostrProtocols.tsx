@@ -5,13 +5,14 @@ import {Badge} from '../../ui/badge';
 import {Collapsible, CollapsibleContent, CollapsibleTrigger} from '../../ui/collapsible';
 import {Button} from '../../ui/button';
 import {Network, Users, ChevronDown, ChevronRight} from 'lucide-react';
+import {NavigationLinks} from './NavigationLinks';
 
 export function NostrProtocols() {
   const [isEventFieldsOpen, setIsEventFieldsOpen] = useState(false);
 
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
-      <div className="space-y-4">
+      <div className="space-y-4" id="overview">
         <h1 className="text-4xl font-bold tracking-tight">Nostr Node Discovery</h1>
         <p className="text-xl text-muted-foreground">
           Implementation guidelines for node discovery and service announcement using Nostr events for decentralized
@@ -20,7 +21,7 @@ export function NostrProtocols() {
       </div>
 
       {/* Overview */}
-      <Card>
+      <Card id="node-discovery-overview">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Network className="w-5 h-5" />
@@ -36,7 +37,7 @@ export function NostrProtocols() {
       </Card>
 
       {/* Event Structure */}
-      <Card>
+      <Card id="event-structure">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             Node Announcement Event
@@ -140,7 +141,7 @@ export function NostrProtocols() {
       </Card>
 
       {/* Implementation Guidelines */}
-      <Card>
+      <Card id="implementation-guidelines">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Users className="w-5 h-5" />
@@ -173,6 +174,8 @@ export function NostrProtocols() {
           </div>
         </CardContent>
       </Card>
+
+      <NavigationLinks currentSection="nostr-protocols" variant="compact" showTitle={false} />
     </div>
   );
 }

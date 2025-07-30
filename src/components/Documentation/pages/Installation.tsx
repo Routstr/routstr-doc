@@ -2,6 +2,7 @@ import React from 'react';
 import {Download, Copy} from 'lucide-react';
 import {Button} from '../../ui/button';
 import {Card, CardContent, CardHeader, CardTitle} from '../../ui/card';
+import {NavigationLinks} from './NavigationLinks';
 
 export function Installation() {
   const copyToClipboard = (text: string) => {
@@ -23,7 +24,7 @@ export function Installation() {
 
         <Card className="shadow-sm border-l-4 border-l-blue-500">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
+            <CardTitle className="flex items-center gap-2" id="docker-compose-setup">
               <Download className="w-5 h-5 text-blue-600" />
               Docker Compose Setup
             </CardTitle>
@@ -62,6 +63,8 @@ export function Installation() {
           </CardContent>
         </Card>
       </section>
+
+      <NavigationLinks currentSection="installation" variant="compact" showTitle={false} />
     </div>
   );
 }

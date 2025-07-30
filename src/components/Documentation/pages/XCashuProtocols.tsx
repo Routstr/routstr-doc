@@ -5,11 +5,12 @@ import {Alert, AlertDescription} from '../../ui/alert';
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from '../../ui/table';
 import {SequenceDiagram} from '../../ui/sequence-diagram';
 import {Code} from 'lucide-react';
+import {NavigationLinks} from './NavigationLinks';
 
 export function XCashuProtocols() {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
-      <div className="space-y-4">
+      <div className="space-y-4" id="overview">
         <h1 className="text-4xl font-bold tracking-tight">Payment Protocol</h1>
         <p className="text-xl text-muted-foreground">
           Multiple interaction models for using the X-Cashu header to pay for access to LLM or other AI services over
@@ -18,7 +19,7 @@ export function XCashuProtocols() {
       </div>
 
       {/* Introduction */}
-      <Card>
+      <Card id="protocol-overview">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Code className="w-5 h-5" />
@@ -35,7 +36,7 @@ export function XCashuProtocols() {
       </Card>
 
       {/* Protocol 1: Single-use Cashu Notes */}
-      <Card>
+      <Card id="single-use-cashu-notes">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             1. Single-use Cashu Notes
@@ -599,6 +600,8 @@ export function XCashuProtocols() {
           </div>
         </CardContent>
       </Card>
+
+      <NavigationLinks currentSection="xcashu-protocols" variant="compact" showTitle={false} />
     </div>
   );
 }

@@ -3,11 +3,12 @@ import {Card, CardContent, CardHeader, CardTitle} from '../../ui/card';
 import {Badge} from '../../ui/badge';
 import {Alert, AlertDescription} from '../../ui/alert';
 import {Network, Users, Shield, Star, Wallet, Key, Activity} from 'lucide-react';
+import {NavigationLinks} from './NavigationLinks';
 
 export function Nostr() {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
-      <div className="space-y-4">
+      <div className="space-y-4" id="overview">
         <h1 className="text-4xl font-bold tracking-tight">Nostr Integration</h1>
         <p className="text-xl text-muted-foreground">
           Discover how Routstr leverages Nostr's decentralized protocols to create a truly open and permissionless AI
@@ -16,7 +17,7 @@ export function Nostr() {
       </div>
 
       {/* Provider Discovery & Selection */}
-      <Card>
+      <Card id="provider-discovery">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Users className="w-5 h-5" />
@@ -83,7 +84,7 @@ export function Nostr() {
       </Card>
 
       {/* Routstr Marketplace */}
-      <Card>
+      <Card id="routstr-marketplace">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Network className="w-5 h-5" />
@@ -153,7 +154,7 @@ export function Nostr() {
       </Card>
 
       {/* Nostr Data Storage */}
-      <Card>
+      <Card id="nostr-data-storage">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Key className="w-5 h-5" />
@@ -224,6 +225,8 @@ export function Nostr() {
           </div>
         </CardContent>
       </Card>
+
+      <NavigationLinks currentSection="nostr" variant="compact" showTitle={false} />
     </div>
   );
 }

@@ -1,18 +1,26 @@
 import React from 'react';
 import {CodeBlock} from '@/components/ui/code-block';
+import {NavigationLinks} from './NavigationLinks';
+import {SectionHeading} from './SectionLinkCopy';
 
 export function HowToUse() {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
-      <h1 className="text-4xl font-bold mb-6">How to Use</h1>
-      <p className="text-lg text-muted-foreground mb-8">
-        Learn how to make your first API calls and integrate Routstr Client 402 gateway into your applications.
-      </p>
+      <div id="overview">
+        <SectionHeading level={1} id="overview" className="mb-6">
+          How to Use
+        </SectionHeading>
+        <p className="text-lg text-muted-foreground mb-8">
+          Learn how to make your first API calls and integrate Routstr Client 402 gateway into your applications.
+        </p>
+      </div>
 
       <div className="space-y-12">
-        <section>
+        <section id="try-live-service">
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/30 dark:to-purple-950/30 rounded-lg p-6 mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-blue-900 dark:text-blue-100">🚀 Try the Live Service</h2>
+            <SectionHeading level={2} id="try-live-service" className="mb-4 text-blue-900 dark:text-blue-100">
+              🚀 Try the Live Service
+            </SectionHeading>
             <p className="text-muted-foreground mb-4">
               Experience Routstr Client's e-cash payment system without any setup or configuration. Our live service is
               available for immediate use with AI services.
@@ -21,9 +29,7 @@ export function HowToUse() {
               <div className="flex-1">
                 <p className="font-medium mb-2">Live Service URL:</p>
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-3 border">
-                  <code className="text-sm font-mono text-blue-600 dark:text-blue-400">
-                    https://ecash.client.otrta.me/
-                  </code>
+                  <code className="text-sm font-mono text-blue-600 dark:text-blue-400">https://otrta.routstr.com/</code>
                 </div>
               </div>
               <div className="flex-1">
@@ -64,8 +70,10 @@ export function HowToUse() {
           </div>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Step-by-Step Guide</h2>
+        <section id="step-by-step-guide">
+          <SectionHeading level={2} id="step-by-step-guide" className="mb-4">
+            Step-by-Step Guide
+          </SectionHeading>
           <p className="text-muted-foreground mb-6">
             Follow these simple steps to start using AI services with e-cash payments through our live service.
           </p>
@@ -78,9 +86,9 @@ export function HowToUse() {
               <div className="flex-1">
                 <h4 className="font-semibold mb-2">Add E-Cash to Your Wallet</h4>
                 <p className="text-muted-foreground mb-3">
-                  Visit <code className="bg-muted px-2 py-1 rounded">https://ecash.client.otrta.me/</code> and
-                  authenticate using your Nostr keys. Once logged in, add e-cash tokens to your wallet using supported
-                  Cashu mints or the built-in wallet features.
+                  Visit <code className="bg-muted px-2 py-1 rounded">https://otrta.routstr.com/</code> and authenticate
+                  using your Nostr keys. Once logged in, add e-cash tokens to your wallet using supported Cashu mints or
+                  the built-in wallet features.
                 </p>
                 <div className="bg-blue-50 dark:bg-blue-950/30 rounded-lg p-3">
                   <p className="text-sm text-blue-800 dark:text-blue-200">
@@ -123,7 +131,7 @@ export function HowToUse() {
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-4 border">
                   <p className="font-medium mb-2">Server Base URL:</p>
                   <code className="text-sm font-mono text-purple-600 dark:text-purple-400">
-                    https://ecash.server.otrta.me
+                    https://otrta.routstr.com
                   </code>
                 </div>
               </div>
@@ -175,8 +183,10 @@ export function HowToUse() {
           </div>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Basic Usage</h2>
+        <section id="basic-usage">
+          <SectionHeading level={2} id="basic-usage" className="mb-4">
+            Basic Usage
+          </SectionHeading>
           <p className="text-muted-foreground mb-4">
             Getting started with Routstr Client gateway is simple. You can use either our live service at{' '}
             <code className="bg-muted px-2 py-1 rounded">https://ecash.client.otrta.me/</code> or run locally. Simply
@@ -187,7 +197,7 @@ export function HowToUse() {
             <div>
               <h4 className="font-semibold mb-2">Using Live Service:</h4>
               <CodeBlock
-                code={`curl -X POST https://ecash.client.otrta.me/v1/chat/completions \\
+                code={`curl -X POST https://otrta.routstr.com/v1/chat/completions \\
   -H "Content-Type: application/json" \\
   -H "X-Cashu: your-ecash-token" \\
   -d @request.json`}
@@ -208,8 +218,10 @@ export function HowToUse() {
           </div>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Payment Flow</h2>
+        <section id="payment-flow">
+          <SectionHeading level={2} id="payment-flow" className="mb-4">
+            Payment Flow
+          </SectionHeading>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="p-4 border rounded-lg">
               <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold mb-2">
@@ -242,8 +254,10 @@ export function HowToUse() {
           </div>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">Troubleshooting</h2>
+        <section id="troubleshooting">
+          <SectionHeading level={2} id="troubleshooting" className="mb-4">
+            Troubleshooting
+          </SectionHeading>
           <div className="space-y-4">
             <div className="p-4 border-l-4 border-yellow-500 bg-yellow-50 dark:bg-yellow-950/20">
               <h4 className="font-semibold text-yellow-800 dark:text-yellow-200">Common Issues</h4>
@@ -257,6 +271,8 @@ export function HowToUse() {
           </div>
         </section>
       </div>
+
+      <NavigationLinks currentSection="how-to-use" variant="compact" showTitle={false} />
     </div>
   );
 }

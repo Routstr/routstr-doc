@@ -5,6 +5,7 @@ import {Alert, AlertDescription} from '../../ui/alert';
 import {Collapsible, CollapsibleContent, CollapsibleTrigger} from '../../ui/collapsible';
 import {Button} from '../../ui/button';
 import {Server, ChevronDown, ChevronRight} from 'lucide-react';
+import {NavigationLinks} from './NavigationLinks';
 
 export function ProviderProtocols() {
   const [isFieldDescriptionsOpen, setIsFieldDescriptionsOpen] = useState(false);
@@ -12,7 +13,7 @@ export function ProviderProtocols() {
 
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
-      <div className="space-y-4">
+      <div className="space-y-4" id="overview">
         <h1 className="text-4xl font-bold tracking-tight">Provider Protocol</h1>
         <p className="text-xl text-muted-foreground">
           Implementation guidelines, API extensions, and operational best practices for X-Cashu payment providers.
@@ -20,7 +21,7 @@ export function ProviderProtocols() {
       </div>
 
       {/* Overview */}
-      <Card>
+      <Card id="implementation-overview">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Server className="w-5 h-5" />
@@ -36,7 +37,9 @@ export function ProviderProtocols() {
         </CardContent>
       </Card>
 
-      <Card>
+      <NavigationLinks currentSection="provider-protocols" variant="compact" showTitle={false} />
+
+      <Card id="integration-guidelines">
         <CardHeader>
           <CardTitle>Integration Guidelines</CardTitle>
         </CardHeader>
@@ -57,7 +60,7 @@ export function ProviderProtocols() {
       </Card>
 
       {/* Implementation Notes */}
-      <Card>
+      <Card id="implementation-notes">
         <CardHeader>
           <CardTitle>Implementation Notes</CardTitle>
         </CardHeader>
@@ -77,7 +80,7 @@ export function ProviderProtocols() {
       </Card>
 
       {/* Provider Information Discovery */}
-      <Card>
+      <Card id="provider-information-discovery">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             Provider Information Discovery
@@ -255,7 +258,7 @@ export function ProviderProtocols() {
       </Card>
 
       {/* Model & Pricing Discovery */}
-      <Card>
+      <Card id="model-pricing-discovery">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             Model & Pricing Discovery
@@ -595,7 +598,7 @@ export function ProviderProtocols() {
       </Card>
 
       {/* X-Cashu Header Specification */}
-      <Card>
+      <Card id="x-cashu-header-specification">
         <CardHeader>
           <CardTitle>X-Cashu Header Specification</CardTitle>
         </CardHeader>

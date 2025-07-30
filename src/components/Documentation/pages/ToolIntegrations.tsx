@@ -2,32 +2,42 @@ import React from 'react';
 import Image from 'next/image';
 import {Badge} from '@/components/ui/badge';
 import {Card} from '@/components/ui/card';
-
 import {ExternalLink, Code, Sparkles, Layers, Cpu} from 'lucide-react';
+import {NavigationLinks} from './NavigationLinks';
+import {SectionHeading, SectionLinkCopy} from './SectionLinkCopy';
 
 export function ToolIntegrations() {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
-      <h1 className="text-4xl font-bold mb-6">Tool Integrations</h1>
-      <p className="text-lg text-muted-foreground mb-8">
-        Seamlessly integrate Routstr-Client gateway with your favorite AI tools and development environments.
-      </p>
+      <div id="overview">
+        <SectionHeading level={1} id="overview" className="mb-6">
+          Tool Integrations
+        </SectionHeading>
+        <p className="text-lg text-muted-foreground mb-8">
+          Seamlessly integrate Routstr-Client gateway with your favorite AI tools and development environments.
+        </p>
+      </div>
 
       <div className="space-y-12">
         {/* Major AI Coding Apps Section */}
-        <section>
-          <h2 className="text-3xl font-bold mb-6">Major AI Coding Apps</h2>
+        <section id="major-ai-coding-apps">
+          <SectionHeading level={2} id="major-ai-coding-apps" className="mb-6">
+            Major AI Coding Apps
+          </SectionHeading>
           <p className="text-muted-foreground mb-8">
             The most popular AI coding assistants. See how these tools work in action:
           </p>
 
           {/* Cline */}
-          <div className="mb-12">
+          <div className="mb-12" id="cline">
             <Card className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Code className="h-8 w-8 text-blue-500" />
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold">Cline</h3>
+                  <div className="flex items-center">
+                    <h3 className="text-2xl font-bold">Cline</h3>
+                    <SectionLinkCopy sectionId="cline" />
+                  </div>
                   <p className="text-muted-foreground">Autonomous coding agent right in your IDE</p>
                 </div>
                 <div className="flex gap-2">
@@ -83,12 +93,15 @@ export function ToolIntegrations() {
           </div>
 
           {/* Roo Code */}
-          <div className="mb-12">
+          <div className="mb-12" id="roo-code">
             <Card className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <Layers className="h-8 w-8 text-purple-500" />
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold">Roo Code</h3>
+                  <div className="flex items-center">
+                    <h3 className="text-2xl font-bold">Roo Code</h3>
+                    <SectionLinkCopy sectionId="roo-code" />
+                  </div>
                   <p className="text-muted-foreground">A whole dev team of AI agents in your editor</p>
                 </div>
                 <div className="flex gap-2">
@@ -285,6 +298,8 @@ export function ToolIntegrations() {
           </div>
         </section>
       </div>
+
+      <NavigationLinks currentSection="tool-integrations" variant="compact" showTitle={false} />
     </div>
   );
 }

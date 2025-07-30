@@ -3,12 +3,13 @@ import {Card, CardContent, CardHeader, CardTitle} from '../../ui/card';
 import {Server, ArrowUpRight, Settings, Shield} from 'lucide-react';
 import {motion} from 'framer-motion';
 import {GithubLogo} from '@/components/ui/Icons';
-import {Alert, AlertDescription} from '@/components/ui/alert';
+import {Alert, AlertDescription} from '../../ui/alert';
+import {NavigationLinks} from './NavigationLinks';
 
 export function VisionSpec() {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
-      <div className="space-y-4">
+      <div className="space-y-4" id="overview">
         <h1 className="text-4xl font-bold tracking-tight">Vision</h1>
         <p className="text-xl text-muted-foreground">
           The future of AI service delivery through intelligent, adaptive payment systems.
@@ -16,7 +17,7 @@ export function VisionSpec() {
       </div>
 
       <div className="grid gap-6">
-        <Card className="p-6">
+        <Card className="p-6" id="smart-client-architecture">
           <CardHeader>
             <CardTitle>Smart Client and Provider Architecture</CardTitle>
           </CardHeader>
@@ -81,7 +82,7 @@ export function VisionSpec() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card id="dynamic-cost-management">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">Dynamic Cost Management</CardTitle>
           </CardHeader>
@@ -259,6 +260,8 @@ export function VisionSpec() {
           </motion.a>
         </motion.div>
       </div>
+
+      <NavigationLinks currentSection="vision" variant="compact" showTitle={false} />
     </div>
   );
 }

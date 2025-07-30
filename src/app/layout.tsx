@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'routstr-client',
-  description: 'routstr-client gateway',
+  title: 'routstr',
+  description: 'routstr gateway',
   icons: {
     icon: [
       {
